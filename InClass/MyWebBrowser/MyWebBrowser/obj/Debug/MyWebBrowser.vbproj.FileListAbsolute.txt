@@ -1,0 +1,11 @@
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\bin\Debug\MyWebBrowser.exe.config
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.vbprojResolveAssemblyReference.cache
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.MainForm.resources
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.Resources.resources
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.vbproj.GenerateResource.Cache
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.xml
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\bin\Debug\MyWebBrowser.exe
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\bin\Debug\MyWebBrowser.pdb
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\bin\Debug\MyWebBrowser.xml
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.exe
+T:\SE361\InClass\MyWebBrowser\MyWebBrowser\obj\Debug\MyWebBrowser.pdb
