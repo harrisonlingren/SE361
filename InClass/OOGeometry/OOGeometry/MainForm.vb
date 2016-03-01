@@ -27,19 +27,21 @@ Public Class MainForm
         Dim objSquare As New clsSquare
         Dim objRectangle As New clsRectangle
 
-        'Decide which shape is selected
-        If rbtSquare.Checked = True Then
-            objSquare.side = CDbl(txtSide1.Text)
-            lblArea.Text = CStr(objSquare.area)
-            lblPerimeter.Text = CStr(objSquare.perimeter)
-        ElseIf rbtRectangle.Checked = True Then
-            objRectangle.side1 = CDbl(txtSide1.Text)
-            objRectangle.side2 = CDbl(txtSide2.Text)
-            lblArea.Text = CStr(objRectangle.Area)
-            lblPerimeter.Text = CStr(objRectangle.Perimeter)
-        Else
-            MessageBox.Show("Please select a shape")
-        End If
+        Try
+            'Decide which shape is selected
+            If rbtSquare.Checked = True Then
+                objSquare.side = CDbl(txtSide1.Text)
+                lblArea.Text = CStr(objSquare.area)
+                lblPerimeter.Text = CStr(objSquare.perimeter)
+            ElseIf rbtRectangle.Checked = True Then
+                objRectangle.side1 = CDbl(txtSide1.Text)
+                objRectangle.side2 = CDbl(txtSide2.Text)
+                lblArea.Text = CStr(objRectangle.Area)
+                lblPerimeter.Text = CStr(objRectangle.Perimeter)
+            Else
+                MessageBox.Show("Please select a shape")
+            End If
+        Catch ex As Exception
 
     End Sub
 
