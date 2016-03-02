@@ -23,16 +23,16 @@ Partial Class FormJobs
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.listViewJobs = New System.Windows.Forms.ListView()
-        Me.btnDelJob = New System.Windows.Forms.Button()
-        Me.btnEditJob = New System.Windows.Forms.Button()
-        Me.btnAddJob = New System.Windows.Forms.Button()
         Me.jobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobCost = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.jobEmployeeID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobCustomerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.jobEmployeeID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnDelJob = New System.Windows.Forms.Button()
+        Me.btnEditJob = New System.Windows.Forms.Button()
+        Me.btnAddJob = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'listViewJobs
@@ -44,6 +44,40 @@ Partial Class FormJobs
         Me.listViewJobs.TabIndex = 7
         Me.listViewJobs.UseCompatibleStateImageBehavior = False
         Me.listViewJobs.View = System.Windows.Forms.View.Details
+        '
+        'jobID
+        '
+        Me.jobID.Text = "ID"
+        '
+        'jobDate
+        '
+        Me.jobDate.Text = "Date"
+        Me.jobDate.Width = 75
+        '
+        'jobTime
+        '
+        Me.jobTime.Text = "Time"
+        Me.jobTime.Width = 70
+        '
+        'jobAddress
+        '
+        Me.jobAddress.Text = "Address"
+        Me.jobAddress.Width = 123
+        '
+        'jobCost
+        '
+        Me.jobCost.Text = "Cost"
+        Me.jobCost.Width = 63
+        '
+        'jobCustomerID
+        '
+        Me.jobCustomerID.Text = "Customer ID"
+        Me.jobCustomerID.Width = 75
+        '
+        'jobEmployeeID
+        '
+        Me.jobEmployeeID.Text = "Cleaner ID"
+        Me.jobEmployeeID.Width = 67
         '
         'btnDelJob
         '
@@ -73,41 +107,6 @@ Partial Class FormJobs
         Me.btnAddJob.TabIndex = 4
         Me.btnAddJob.Text = "Add"
         Me.btnAddJob.UseVisualStyleBackColor = True
-        '
-        'jobID
-        '
-        Me.jobID.Text = "ID"
-        '
-        'jobDate
-        '
-        Me.jobDate.Text = "Date"
-        Me.jobDate.Width = 75
-        '
-        'jobTime
-        '
-        Me.jobTime.Text = "Time"
-        Me.jobTime.Width = 70
-        '
-        'jobAddress
-        '
-        Me.jobAddress.Text = "Address"
-        Me.jobAddress.Width = 123
-        '
-        'jobCost
-        '
-        Me.jobCost.Text = "Cost"
-        Me.jobCost.Width = 63
-        '
-        'jobEmployeeID
-        '
-        Me.jobEmployeeID.Text = "Cleaner ID"
-        Me.jobEmployeeID.Width = 67
-        '
-        'jobCustomerID
-        '
-        Me.jobCustomerID.DisplayIndex = 6
-        Me.jobCustomerID.Text = "Customer ID"
-        Me.jobCustomerID.Width = 75
         '
         'FormJobs
         '

@@ -23,11 +23,11 @@ Partial Class FormAppts
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.listViewAppts = New System.Windows.Forms.ListView()
-        Me.custID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.apptID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.apptDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.apptTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.apptCust = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.apptAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelAppt = New System.Windows.Forms.Button()
         Me.btnEditAppt = New System.Windows.Forms.Button()
         Me.btnAddAppt = New System.Windows.Forms.Button()
@@ -35,7 +35,7 @@ Partial Class FormAppts
         '
         'listViewAppts
         '
-        Me.listViewAppts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.custID, Me.custName, Me.custAddress, Me.custPhone, Me.custEmail})
+        Me.listViewAppts.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.apptID, Me.apptDate, Me.apptTime, Me.apptCust, Me.apptAddress})
         Me.listViewAppts.Location = New System.Drawing.Point(12, 12)
         Me.listViewAppts.Name = "listViewAppts"
         Me.listViewAppts.Size = New System.Drawing.Size(545, 271)
@@ -43,30 +43,29 @@ Partial Class FormAppts
         Me.listViewAppts.UseCompatibleStateImageBehavior = False
         Me.listViewAppts.View = System.Windows.Forms.View.Details
         '
-        'custID
+        'apptID
         '
-        Me.custID.Text = "ID"
-        Me.custID.Width = 41
+        Me.apptID.Text = "ID"
         '
-        'custName
+        'apptDate
         '
-        Me.custName.Text = "Name"
-        Me.custName.Width = 114
+        Me.apptDate.Text = "Date"
+        Me.apptDate.Width = 90
         '
-        'custAddress
+        'apptTime
         '
-        Me.custAddress.Text = "Address"
-        Me.custAddress.Width = 152
+        Me.apptTime.Text = "Time"
+        Me.apptTime.Width = 86
         '
-        'custPhone
+        'apptCust
         '
-        Me.custPhone.Text = "Phone"
-        Me.custPhone.Width = 93
+        Me.apptCust.Text = "Customer"
+        Me.apptCust.Width = 109
         '
-        'custEmail
+        'apptAddress
         '
-        Me.custEmail.Text = "Email"
-        Me.custEmail.Width = 140
+        Me.apptAddress.Text = "Address"
+        Me.apptAddress.Width = 141
         '
         'btnDelAppt
         '
@@ -113,12 +112,12 @@ Partial Class FormAppts
     End Sub
 
     Friend WithEvents listViewAppts As ListView
-    Friend WithEvents custID As ColumnHeader
-    Friend WithEvents custName As ColumnHeader
-    Friend WithEvents custAddress As ColumnHeader
-    Friend WithEvents custPhone As ColumnHeader
-    Friend WithEvents custEmail As ColumnHeader
     Friend WithEvents btnDelAppt As Button
     Friend WithEvents btnEditAppt As Button
     Friend WithEvents btnAddAppt As Button
+    Friend WithEvents apptID As ColumnHeader
+    Friend WithEvents apptDate As ColumnHeader
+    Friend WithEvents apptTime As ColumnHeader
+    Friend WithEvents apptCust As ColumnHeader
+    Friend WithEvents apptAddress As ColumnHeader
 End Class

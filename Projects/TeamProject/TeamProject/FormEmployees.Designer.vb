@@ -23,11 +23,12 @@ Partial Class FormEmployees
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.listViewEmp = New System.Windows.Forms.ListView()
-        Me.custID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empHours = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnEditEmp = New System.Windows.Forms.Button()
         Me.btnAddEmp = New System.Windows.Forms.Button()
@@ -35,7 +36,7 @@ Partial Class FormEmployees
         '
         'listViewEmp
         '
-        Me.listViewEmp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.custID, Me.custName, Me.custAddress, Me.custPhone, Me.custEmail})
+        Me.listViewEmp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.empID, Me.empName, Me.empType, Me.empAddress, Me.empPhone, Me.empHours})
         Me.listViewEmp.Location = New System.Drawing.Point(12, 12)
         Me.listViewEmp.Name = "listViewEmp"
         Me.listViewEmp.Size = New System.Drawing.Size(545, 271)
@@ -43,30 +44,38 @@ Partial Class FormEmployees
         Me.listViewEmp.UseCompatibleStateImageBehavior = False
         Me.listViewEmp.View = System.Windows.Forms.View.Details
         '
-        'custID
+        'empID
         '
-        Me.custID.Text = "ID"
-        Me.custID.Width = 41
+        Me.empID.Text = "ID"
+        Me.empID.Width = 41
         '
-        'custName
+        'empName
         '
-        Me.custName.Text = "Name"
-        Me.custName.Width = 114
+        Me.empName.Text = "Name"
+        Me.empName.Width = 114
         '
-        'custAddress
+        'empType
         '
-        Me.custAddress.Text = "Address"
-        Me.custAddress.Width = 152
+        Me.empType.DisplayIndex = 5
+        Me.empType.Text = "Type"
         '
-        'custPhone
+        'empAddress
         '
-        Me.custPhone.Text = "Phone"
-        Me.custPhone.Width = 93
+        Me.empAddress.DisplayIndex = 2
+        Me.empAddress.Text = "Address"
+        Me.empAddress.Width = 152
         '
-        'custEmail
+        'empPhone
         '
-        Me.custEmail.Text = "Email"
-        Me.custEmail.Width = 140
+        Me.empPhone.DisplayIndex = 3
+        Me.empPhone.Text = "Phone"
+        Me.empPhone.Width = 93
+        '
+        'empHours
+        '
+        Me.empHours.DisplayIndex = 4
+        Me.empHours.Text = "Hours"
+        Me.empHours.Width = 140
         '
         'btnDelEmp
         '
@@ -113,12 +122,13 @@ Partial Class FormEmployees
     End Sub
 
     Friend WithEvents listViewEmp As ListView
-    Friend WithEvents custID As ColumnHeader
-    Friend WithEvents custName As ColumnHeader
-    Friend WithEvents custAddress As ColumnHeader
-    Friend WithEvents custPhone As ColumnHeader
-    Friend WithEvents custEmail As ColumnHeader
+    Friend WithEvents empID As ColumnHeader
+    Friend WithEvents empName As ColumnHeader
+    Friend WithEvents empAddress As ColumnHeader
+    Friend WithEvents empPhone As ColumnHeader
+    Friend WithEvents empHours As ColumnHeader
     Friend WithEvents btnDelEmp As Button
     Friend WithEvents btnEditEmp As Button
     Friend WithEvents btnAddEmp As Button
+    Friend WithEvents empType As ColumnHeader
 End Class

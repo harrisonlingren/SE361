@@ -23,11 +23,10 @@ Partial Class FormInvoice
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.listViewInvoice = New System.Windows.Forms.ListView()
-        Me.custID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.invoiceID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.invoiceAmount = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.invoiceJob = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.invoiceCustomer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelInvoice = New System.Windows.Forms.Button()
         Me.btnEditInvoice = New System.Windows.Forms.Button()
         Me.btnAddInvoice = New System.Windows.Forms.Button()
@@ -35,7 +34,7 @@ Partial Class FormInvoice
         '
         'listViewInvoice
         '
-        Me.listViewInvoice.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.custID, Me.custName, Me.custAddress, Me.custPhone, Me.custEmail})
+        Me.listViewInvoice.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.invoiceID, Me.invoiceAmount, Me.invoiceJob, Me.invoiceCustomer})
         Me.listViewInvoice.Location = New System.Drawing.Point(12, 12)
         Me.listViewInvoice.Name = "listViewInvoice"
         Me.listViewInvoice.Size = New System.Drawing.Size(545, 271)
@@ -43,30 +42,25 @@ Partial Class FormInvoice
         Me.listViewInvoice.UseCompatibleStateImageBehavior = False
         Me.listViewInvoice.View = System.Windows.Forms.View.Details
         '
-        'custID
+        'invoiceID
         '
-        Me.custID.Text = "ID"
-        Me.custID.Width = 41
+        Me.invoiceID.Text = "ID"
+        Me.invoiceID.Width = 54
         '
-        'custName
+        'invoiceAmount
         '
-        Me.custName.Text = "Name"
-        Me.custName.Width = 114
+        Me.invoiceAmount.Text = "Amount"
+        Me.invoiceAmount.Width = 114
         '
-        'custAddress
+        'invoiceJob
         '
-        Me.custAddress.Text = "Address"
-        Me.custAddress.Width = 152
+        Me.invoiceJob.Text = "Job"
+        Me.invoiceJob.Width = 115
         '
-        'custPhone
+        'invoiceCustomer
         '
-        Me.custPhone.Text = "Phone"
-        Me.custPhone.Width = 93
-        '
-        'custEmail
-        '
-        Me.custEmail.Text = "Email"
-        Me.custEmail.Width = 140
+        Me.invoiceCustomer.Text = "Customer"
+        Me.invoiceCustomer.Width = 152
         '
         'btnDelInvoice
         '
@@ -113,12 +107,11 @@ Partial Class FormInvoice
     End Sub
 
     Friend WithEvents listViewInvoice As ListView
-    Friend WithEvents custID As ColumnHeader
-    Friend WithEvents custName As ColumnHeader
-    Friend WithEvents custAddress As ColumnHeader
-    Friend WithEvents custPhone As ColumnHeader
-    Friend WithEvents custEmail As ColumnHeader
+    Friend WithEvents invoiceID As ColumnHeader
+    Friend WithEvents invoiceAmount As ColumnHeader
+    Friend WithEvents invoiceCustomer As ColumnHeader
     Friend WithEvents btnDelInvoice As Button
     Friend WithEvents btnEditInvoice As Button
     Friend WithEvents btnAddInvoice As Button
+    Friend WithEvents invoiceJob As ColumnHeader
 End Class

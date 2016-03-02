@@ -72,6 +72,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cAppointment.vb" />
+    <Compile Include="cCustomer.vb" />
+    <Compile Include="cEmployee.vb" />
+    <Compile Include="cInvoice.vb" />
+    <Compile Include="cJob.vb" />
     <Compile Include="FormAppts.Designer.vb">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </Compile>
@@ -82,6 +87,36 @@
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </Compile>
     <Compile Include="FormCustomers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditAppt.Designer.vb">
+      <DependentUpon>FormEditAppt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditAppt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditCustomer.Designer.vb">
+      <DependentUpon>FormEditCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEmployee.Designer.vb">
+      <DependentUpon>FormEditEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditInvoice.Designer.vb">
+      <DependentUpon>FormEditInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditJob.Designer.vb">
+      <DependentUpon>FormEditJob.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditJob.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormEmployees.Designer.vb">
@@ -131,6 +166,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditAppt.resx">
+      <DependentUpon>FormEditAppt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditCustomer.resx">
+      <DependentUpon>FormEditCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditEmployee.resx">
+      <DependentUpon>FormEditEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditInvoice.resx">
+      <DependentUpon>FormEditInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditJob.resx">
+      <DependentUpon>FormEditJob.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmployees.resx">
       <DependentUpon>FormEmployees.vb</DependentUpon>
