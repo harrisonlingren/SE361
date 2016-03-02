@@ -43,6 +43,8 @@ Public Class MainForm
             End If
         Catch ex As Exception
 
+        End Try
+
     End Sub
 
     Private Sub rbtCircle_CheckedChanged(sender As Object, e As EventArgs) Handles rbtCircle.CheckedChanged
