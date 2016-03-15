@@ -15,5 +15,18 @@
         FormJobs.listViewJobs.Items(FormJobs.listViewJobs.Items.Count - 1).SubItems.Add(job1.datetime)
         FormJobs.listViewJobs.Items(FormJobs.listViewJobs.Items.Count - 1).SubItems.Add(job1.address)
         FormJobs.listViewJobs.Items(FormJobs.listViewJobs.Items.Count - 1).SubItems.Add(job1.cost)
+
     End Sub
+
+    Public Sub loadJob(selectedIndex As Integer)
+
+        txtJobID.Text = FormJobs.listViewJobs.Items(selectedIndex).Text
+        dtJobTime.Value = CDate(FormJobs.listViewJobs.Items(selectedIndex).SubItems(1).Text)
+        txtJobAddress.Text = FormJobs.listViewJobs.Items(selectedIndex).SubItems(2).Text
+        txtJobCost.Text = FormJobs.listViewJobs.Items(selectedIndex).SubItems(3).Text
+
+        Me.Show()
+
+    End Sub
+
 End Class

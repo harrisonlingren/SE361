@@ -35,6 +35,8 @@ Partial Class FormJobs
         'listViewJobs
         '
         Me.listViewJobs.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.jobID, Me.jobDateTime, Me.jobAddress, Me.jobCost})
+        Me.listViewJobs.FullRowSelect = True
+        Me.listViewJobs.GridLines = True
         Me.listViewJobs.Location = New System.Drawing.Point(12, 12)
         Me.listViewJobs.Name = "listViewJobs"
         Me.listViewJobs.Size = New System.Drawing.Size(545, 271)
