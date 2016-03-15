@@ -21,7 +21,6 @@ Public Class FormCustomers
     End Sub
 
     Private Sub FormCustomers_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'TODO: This line of code loads data into the 'Se361DataSet.Customers' table. You can move, or remove it, as needed.
         loadDataCust()
     End Sub
 
@@ -43,11 +42,9 @@ Public Class FormCustomers
         cmd.Connection = dbConn
 
         da = New MySqlDataAdapter(cmd)
-
         da.Fill(dt)
 
         Dim cb As New MySqlCommandBuilder(da)
-
         With dvCustomer
             .AutoGenerateColumns = True
             .DataSource = dt
@@ -57,5 +54,17 @@ Public Class FormCustomers
         cmd = Nothing
         dbConn.Close()
         dbConn.Dispose()
+    End Sub
+
+    Private Sub btnDelCust_Click(sender As Object, e As EventArgs) Handles btnDelCust.Click
+        For Each row As DataGridViewRow In dvCustomer.SelectedRows
+            MessageBox.Show("Deleting customer " & row.Cells(0).Value)
+            Dim delQuery As String = "delete from Customers where cust_id = ?cust_id"
+            Dim Params As New List(Of MySqlParameter)
+            Params.Add(New MySqlParameter("cust_id", row.Cells(0).Value))
+            Dim oConnection As MySqlConnection = New MySqlConnection(FormMain.dbString)
+            MessageBox.Show(FormMain.ParameterizedNonQueryCommand(delQuery, Params, oConnection))
+        Next
+
     End Sub
 End Class

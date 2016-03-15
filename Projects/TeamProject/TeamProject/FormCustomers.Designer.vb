@@ -57,7 +57,6 @@ Partial Class FormCustomers
         '
         'btnDelCust
         '
-        Me.btnDelCust.Enabled = False
         Me.btnDelCust.Location = New System.Drawing.Point(244, 289)
         Me.btnDelCust.Name = "btnDelCust"
         Me.btnDelCust.Size = New System.Drawing.Size(110, 23)
@@ -76,12 +75,15 @@ Partial Class FormCustomers
         '
         'dvCustomer
         '
+        Me.dvCustomer.AllowUserToAddRows = False
+        Me.dvCustomer.AllowUserToDeleteRows = False
         Me.dvCustomer.AllowUserToResizeRows = False
         Me.dvCustomer.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.dvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvCustomer.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.dvCustomer.Location = New System.Drawing.Point(12, 12)
         Me.dvCustomer.Name = "dvCustomer"
+        Me.dvCustomer.ReadOnly = True
         Me.dvCustomer.Size = New System.Drawing.Size(545, 271)
         Me.dvCustomer.TabIndex = 4
         '

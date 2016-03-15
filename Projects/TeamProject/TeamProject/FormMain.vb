@@ -24,7 +24,7 @@ Public Class FormMain
         FormJobs.Show()
     End Sub
 
-    Public Function runDBquery(ByVal query As String)
+    Public Function runDBquery(ByVal query As String) As String
 
         Using dbCustomer As New MySqlConnection
             dbCustomer.ConnectionString = dbString
@@ -33,18 +33,36 @@ Public Class FormMain
                 Dim cmd As New MySqlCommand
                 cmd.CommandText = query
                 cmd.Connection = dbCustomer
-                cmd.ExecuteNonQuery()
-                Return True
+                Return cmd.ExecuteNonQuery()
 
             Catch ex As Exception
                 MessageBox.Show("Error occurred:" & ex.ToString)
-                Return False
+                Return "Error"
 
             Finally
                 dbCustomer.Close()
             End Try
         End Using
 
+    End Function
+
+    Public Function ParameterizedNonQueryCommand(ByRef NonQuery As String, ByVal Parameters As List(Of MySqlParameter),
+        Optional ByVal Connection As MySql.Data.MySqlClient.MySqlConnection = Nothing) As String
+
+        Dim comm As New MySql.Data.MySqlClient.MySqlCommand(NonQuery, Connection)
+        Try
+            For Each param As MySql.Data.MySqlClient.MySqlParameter In Parameters
+                comm.Parameters.Add(param)
+            Next
+            If comm.Connection.State <> ConnectionState.Open Then comm.Connection.Open()
+            comm.Prepare()
+            Return comm.ExecuteNonQuery()
+        Catch ex As Exception
+            Return ex.ToString
+        Finally
+            comm.Connection.Close()
+            comm.Dispose()
+        End Try
     End Function
 
 End Class
