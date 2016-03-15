@@ -32,11 +32,14 @@ Partial Class FormEmployees
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnEditEmp = New System.Windows.Forms.Button()
         Me.btnAddEmp = New System.Windows.Forms.Button()
+        Me.empPayRate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'listViewEmp
         '
-        Me.listViewEmp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.empID, Me.empName, Me.empType, Me.empAddress, Me.empPhone, Me.empHours})
+        Me.listViewEmp.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.empID, Me.empType, Me.empName, Me.empAddress, Me.empPhone, Me.empHours, Me.empPayRate})
+        Me.listViewEmp.FullRowSelect = True
+        Me.listViewEmp.GridLines = True
         Me.listViewEmp.Location = New System.Drawing.Point(12, 12)
         Me.listViewEmp.Name = "listViewEmp"
         Me.listViewEmp.Size = New System.Drawing.Size(545, 271)
@@ -56,7 +59,6 @@ Partial Class FormEmployees
         '
         'empType
         '
-        Me.empType.DisplayIndex = 5
         Me.empType.Text = "Type"
         '
         'empAddress
@@ -106,6 +108,10 @@ Partial Class FormEmployees
         Me.btnAddEmp.Text = "Add"
         Me.btnAddEmp.UseVisualStyleBackColor = True
         '
+        'empPayRate
+        '
+        Me.empPayRate.Text = "Pay Rate"
+        '
         'FormEmployees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,4 +137,5 @@ Partial Class FormEmployees
     Friend WithEvents btnEditEmp As Button
     Friend WithEvents btnAddEmp As Button
     Friend WithEvents empType As ColumnHeader
+    Friend WithEvents empPayRate As ColumnHeader
 End Class

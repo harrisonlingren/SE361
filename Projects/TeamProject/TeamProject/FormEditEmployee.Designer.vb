@@ -22,8 +22,8 @@ Partial Class FormEditEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnCustCancel = New System.Windows.Forms.Button()
-        Me.btnCustSave = New System.Windows.Forms.Button()
+        Me.btnEmpCancel = New System.Windows.Forms.Button()
+        Me.btnEmpSave = New System.Windows.Forms.Button()
         Me.txtEmpHours = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtEmpPhone = New System.Windows.Forms.TextBox()
@@ -36,25 +36,27 @@ Partial Class FormEditEmployee
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.comboEmpType = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtEmpPayRate = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'btnCustCancel
+        'btnEmpCancel
         '
-        Me.btnCustCancel.Location = New System.Drawing.Point(143, 175)
-        Me.btnCustCancel.Name = "btnCustCancel"
-        Me.btnCustCancel.Size = New System.Drawing.Size(95, 23)
-        Me.btnCustCancel.TabIndex = 23
-        Me.btnCustCancel.Text = "Cancel"
-        Me.btnCustCancel.UseVisualStyleBackColor = True
+        Me.btnEmpCancel.Location = New System.Drawing.Point(143, 211)
+        Me.btnEmpCancel.Name = "btnEmpCancel"
+        Me.btnEmpCancel.Size = New System.Drawing.Size(95, 23)
+        Me.btnEmpCancel.TabIndex = 23
+        Me.btnEmpCancel.Text = "Cancel"
+        Me.btnEmpCancel.UseVisualStyleBackColor = True
         '
-        'btnCustSave
+        'btnEmpSave
         '
-        Me.btnCustSave.Location = New System.Drawing.Point(15, 175)
-        Me.btnCustSave.Name = "btnCustSave"
-        Me.btnCustSave.Size = New System.Drawing.Size(95, 23)
-        Me.btnCustSave.TabIndex = 22
-        Me.btnCustSave.Text = "Save"
-        Me.btnCustSave.UseVisualStyleBackColor = True
+        Me.btnEmpSave.Location = New System.Drawing.Point(15, 211)
+        Me.btnEmpSave.Name = "btnEmpSave"
+        Me.btnEmpSave.Size = New System.Drawing.Size(95, 23)
+        Me.btnEmpSave.TabIndex = 22
+        Me.btnEmpSave.Text = "Save"
+        Me.btnEmpSave.UseVisualStyleBackColor = True
         '
         'txtEmpHours
         '
@@ -155,15 +157,33 @@ Partial Class FormEditEmployee
         Me.comboEmpType.Size = New System.Drawing.Size(146, 21)
         Me.comboEmpType.TabIndex = 25
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(12, 168)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(54, 13)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "Pay Rate:"
+        '
+        'txtEmpPayRate
+        '
+        Me.txtEmpPayRate.Location = New System.Drawing.Point(92, 165)
+        Me.txtEmpPayRate.Name = "txtEmpPayRate"
+        Me.txtEmpPayRate.Size = New System.Drawing.Size(146, 20)
+        Me.txtEmpPayRate.TabIndex = 21
+        '
         'FormEditEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(250, 210)
+        Me.ClientSize = New System.Drawing.Size(250, 246)
         Me.Controls.Add(Me.comboEmpType)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.btnCustCancel)
-        Me.Controls.Add(Me.btnCustSave)
+        Me.Controls.Add(Me.btnEmpCancel)
+        Me.Controls.Add(Me.btnEmpSave)
+        Me.Controls.Add(Me.txtEmpPayRate)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtEmpHours)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtEmpPhone)
@@ -181,8 +201,8 @@ Partial Class FormEditEmployee
 
     End Sub
 
-    Friend WithEvents btnCustCancel As Button
-    Friend WithEvents btnCustSave As Button
+    Friend WithEvents btnEmpCancel As Button
+    Friend WithEvents btnEmpSave As Button
     Friend WithEvents txtEmpHours As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtEmpPhone As TextBox
@@ -195,4 +215,6 @@ Partial Class FormEditEmployee
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents comboEmpType As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtEmpPayRate As TextBox
 End Class

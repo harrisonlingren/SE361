@@ -6,6 +6,7 @@
     Private empPhone As Integer
     Private empHours As String
     Private empPayRate As Double
+    Private empType As String
 
     Public Sub New()
         empID = 0
@@ -14,6 +15,7 @@
         empPhone = 0
         empHours = String.Empty
         empPayRate = 0.0
+        empType = String.Empty
     End Sub
 
     Public Property id As Integer
@@ -21,7 +23,7 @@
             Return empID
         End Get
         Set(value As Integer)
-            empID = id
+            empID = value
         End Set
     End Property
 
@@ -30,7 +32,7 @@
             Return empName
         End Get
         Set(value As String)
-            empName = name
+            empName = value
         End Set
     End Property
 
@@ -39,7 +41,16 @@
             Return empAddr
         End Get
         Set(value As String)
-            empAddr = address
+            empAddr = value
+        End Set
+    End Property
+
+    Public Property type As String
+        Get
+            Return empType
+        End Get
+        Set(value As String)
+            empType = value
         End Set
     End Property
 
@@ -48,7 +59,7 @@
             Return empPhone
         End Get
         Set(value As Integer)
-            empPhone = phone
+            empPhone = value
         End Set
     End Property
 
@@ -57,7 +68,7 @@
             Return empHours
         End Get
         Set(value As String)
-            empHours = hours
+            empHours = value
         End Set
     End Property
 
@@ -66,7 +77,7 @@
             Return empPayRate
         End Get
         Set(value As Double)
-            empPayRate = payRate
+            empPayRate = value
         End Set
     End Property
 

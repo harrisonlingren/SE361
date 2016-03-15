@@ -30,6 +30,5 @@
         txtCustEmail.Text = FormCustomers.listViewCust.Items(selectedIndex).SubItems(3).Text
 
         Me.Show()
-
     End Sub
 End Class
