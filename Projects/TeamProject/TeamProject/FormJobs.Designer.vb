@@ -24,12 +24,9 @@ Partial Class FormJobs
     Private Sub InitializeComponent()
         Me.listViewJobs = New System.Windows.Forms.ListView()
         Me.jobID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.jobDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.jobTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.jobDateTime = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.jobCost = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.jobCustomerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.jobEmployeeID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelJob = New System.Windows.Forms.Button()
         Me.btnEditJob = New System.Windows.Forms.Button()
         Me.btnAddJob = New System.Windows.Forms.Button()
@@ -37,7 +34,7 @@ Partial Class FormJobs
         '
         'listViewJobs
         '
-        Me.listViewJobs.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.jobID, Me.jobDate, Me.jobTime, Me.jobAddress, Me.jobCost, Me.jobCustomerID, Me.jobEmployeeID})
+        Me.listViewJobs.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.jobID, Me.jobDateTime, Me.jobAddress, Me.jobCost})
         Me.listViewJobs.Location = New System.Drawing.Point(12, 12)
         Me.listViewJobs.Name = "listViewJobs"
         Me.listViewJobs.Size = New System.Drawing.Size(545, 271)
@@ -49,15 +46,10 @@ Partial Class FormJobs
         '
         Me.jobID.Text = "ID"
         '
-        'jobDate
+        'jobDateTime
         '
-        Me.jobDate.Text = "Date"
-        Me.jobDate.Width = 75
-        '
-        'jobTime
-        '
-        Me.jobTime.Text = "Time"
-        Me.jobTime.Width = 70
+        Me.jobDateTime.Text = "Date/Time"
+        Me.jobDateTime.Width = 75
         '
         'jobAddress
         '
@@ -68,16 +60,6 @@ Partial Class FormJobs
         '
         Me.jobCost.Text = "Cost"
         Me.jobCost.Width = 63
-        '
-        'jobCustomerID
-        '
-        Me.jobCustomerID.Text = "Customer ID"
-        Me.jobCustomerID.Width = 75
-        '
-        'jobEmployeeID
-        '
-        Me.jobEmployeeID.Text = "Cleaner ID"
-        Me.jobEmployeeID.Width = 67
         '
         'btnDelJob
         '
@@ -128,10 +110,7 @@ Partial Class FormJobs
     Friend WithEvents btnEditJob As Button
     Friend WithEvents btnAddJob As Button
     Friend WithEvents jobID As ColumnHeader
-    Friend WithEvents jobDate As ColumnHeader
-    Friend WithEvents jobTime As ColumnHeader
+    Friend WithEvents jobDateTime As ColumnHeader
     Friend WithEvents jobAddress As ColumnHeader
     Friend WithEvents jobCost As ColumnHeader
-    Friend WithEvents jobCustomerID As ColumnHeader
-    Friend WithEvents jobEmployeeID As ColumnHeader
 End Class

@@ -65,6 +65,8 @@ Partial Class FormCustomers
         'listViewCust
         '
         Me.listViewCust.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.custID, Me.custName, Me.custAddress, Me.custPhone, Me.custEmail})
+        Me.listViewCust.FullRowSelect = True
+        Me.listViewCust.GridLines = True
         Me.listViewCust.Location = New System.Drawing.Point(12, 12)
         Me.listViewCust.Name = "listViewCust"
         Me.listViewCust.Size = New System.Drawing.Size(545, 271)
