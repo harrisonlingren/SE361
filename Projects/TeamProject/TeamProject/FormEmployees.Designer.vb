@@ -24,15 +24,15 @@ Partial Class FormEmployees
     Private Sub InitializeComponent()
         Me.listViewEmp = New System.Windows.Forms.ListView()
         Me.empID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.empName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.empType = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.empAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.empPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.empHours = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.empPayRate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnEditEmp = New System.Windows.Forms.Button()
         Me.btnAddEmp = New System.Windows.Forms.Button()
-        Me.empPayRate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'listViewEmp
@@ -52,32 +52,33 @@ Partial Class FormEmployees
         Me.empID.Text = "ID"
         Me.empID.Width = 41
         '
+        'empType
+        '
+        Me.empType.Text = "Type"
+        '
         'empName
         '
         Me.empName.Text = "Name"
         Me.empName.Width = 114
         '
-        'empType
-        '
-        Me.empType.Text = "Type"
-        '
         'empAddress
         '
-        Me.empAddress.DisplayIndex = 2
         Me.empAddress.Text = "Address"
         Me.empAddress.Width = 152
         '
         'empPhone
         '
-        Me.empPhone.DisplayIndex = 3
         Me.empPhone.Text = "Phone"
         Me.empPhone.Width = 93
         '
         'empHours
         '
-        Me.empHours.DisplayIndex = 4
         Me.empHours.Text = "Hours"
         Me.empHours.Width = 140
+        '
+        'empPayRate
+        '
+        Me.empPayRate.Text = "Pay Rate"
         '
         'btnDelEmp
         '
@@ -107,10 +108,6 @@ Partial Class FormEmployees
         Me.btnAddEmp.TabIndex = 4
         Me.btnAddEmp.Text = "Add"
         Me.btnAddEmp.UseVisualStyleBackColor = True
-        '
-        'empPayRate
-        '
-        Me.empPayRate.Text = "Pay Rate"
         '
         'FormEmployees
         '

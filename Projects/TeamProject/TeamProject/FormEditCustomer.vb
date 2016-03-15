@@ -19,6 +19,8 @@
         FormCustomers.listViewCust.Items(FormCustomers.listViewCust.Items.Count - 1).SubItems.Add(cust1.phone)
         FormCustomers.listViewCust.Items(FormCustomers.listViewCust.Items.Count - 1).SubItems.Add(cust1.email)
 
+        Me.Close()
+
     End Sub
 
     Public Sub loadCustomer(selectedIndex As Integer)
@@ -30,5 +32,6 @@
         txtCustEmail.Text = FormCustomers.listViewCust.Items(selectedIndex).SubItems(3).Text
 
         Me.Show()
+
     End Sub
 End Class

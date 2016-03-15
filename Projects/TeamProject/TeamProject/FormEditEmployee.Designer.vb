@@ -45,7 +45,7 @@ Partial Class FormEditEmployee
         Me.btnEmpCancel.Location = New System.Drawing.Point(143, 211)
         Me.btnEmpCancel.Name = "btnEmpCancel"
         Me.btnEmpCancel.Size = New System.Drawing.Size(95, 23)
-        Me.btnEmpCancel.TabIndex = 23
+        Me.btnEmpCancel.TabIndex = 8
         Me.btnEmpCancel.Text = "Cancel"
         Me.btnEmpCancel.UseVisualStyleBackColor = True
         '
@@ -54,7 +54,7 @@ Partial Class FormEditEmployee
         Me.btnEmpSave.Location = New System.Drawing.Point(15, 211)
         Me.btnEmpSave.Name = "btnEmpSave"
         Me.btnEmpSave.Size = New System.Drawing.Size(95, 23)
-        Me.btnEmpSave.TabIndex = 22
+        Me.btnEmpSave.TabIndex = 7
         Me.btnEmpSave.Text = "Save"
         Me.btnEmpSave.UseVisualStyleBackColor = True
         '
@@ -63,7 +63,7 @@ Partial Class FormEditEmployee
         Me.txtEmpHours.Location = New System.Drawing.Point(92, 139)
         Me.txtEmpHours.Name = "txtEmpHours"
         Me.txtEmpHours.Size = New System.Drawing.Size(146, 20)
-        Me.txtEmpHours.TabIndex = 21
+        Me.txtEmpHours.TabIndex = 5
         '
         'Label5
         '
@@ -79,7 +79,7 @@ Partial Class FormEditEmployee
         Me.txtEmpPhone.Location = New System.Drawing.Point(92, 113)
         Me.txtEmpPhone.Name = "txtEmpPhone"
         Me.txtEmpPhone.Size = New System.Drawing.Size(146, 20)
-        Me.txtEmpPhone.TabIndex = 19
+        Me.txtEmpPhone.TabIndex = 4
         '
         'Label4
         '
@@ -95,7 +95,7 @@ Partial Class FormEditEmployee
         Me.txtEmpAddress.Location = New System.Drawing.Point(92, 87)
         Me.txtEmpAddress.Name = "txtEmpAddress"
         Me.txtEmpAddress.Size = New System.Drawing.Size(146, 20)
-        Me.txtEmpAddress.TabIndex = 17
+        Me.txtEmpAddress.TabIndex = 3
         '
         'Label3
         '
@@ -111,7 +111,7 @@ Partial Class FormEditEmployee
         Me.txtEmpName.Location = New System.Drawing.Point(92, 61)
         Me.txtEmpName.Name = "txtEmpName"
         Me.txtEmpName.Size = New System.Drawing.Size(146, 20)
-        Me.txtEmpName.TabIndex = 15
+        Me.txtEmpName.TabIndex = 2
         '
         'Label2
         '
@@ -128,7 +128,7 @@ Partial Class FormEditEmployee
         Me.txtEmpID.Name = "txtEmpID"
         Me.txtEmpID.ReadOnly = True
         Me.txtEmpID.Size = New System.Drawing.Size(95, 20)
-        Me.txtEmpID.TabIndex = 13
+        Me.txtEmpID.TabIndex = 0
         '
         'Label1
         '
@@ -155,7 +155,7 @@ Partial Class FormEditEmployee
         Me.comboEmpType.Location = New System.Drawing.Point(92, 35)
         Me.comboEmpType.Name = "comboEmpType"
         Me.comboEmpType.Size = New System.Drawing.Size(146, 21)
-        Me.comboEmpType.TabIndex = 25
+        Me.comboEmpType.TabIndex = 1
         '
         'Label7
         '
@@ -171,7 +171,7 @@ Partial Class FormEditEmployee
         Me.txtEmpPayRate.Location = New System.Drawing.Point(92, 165)
         Me.txtEmpPayRate.Name = "txtEmpPayRate"
         Me.txtEmpPayRate.Size = New System.Drawing.Size(146, 20)
-        Me.txtEmpPayRate.TabIndex = 21
+        Me.txtEmpPayRate.TabIndex = 6
         '
         'FormEditEmployee
         '

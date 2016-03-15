@@ -3,7 +3,7 @@
     Private empID As Integer
     Private empName As String
     Private empAddr As String
-    Private empPhone As Integer
+    Private empPhone As String
     Private empHours As String
     Private empPayRate As Double
     Private empType As String
@@ -54,11 +54,11 @@
         End Set
     End Property
 
-    Public Property phone As Integer
+    Public Property phone As String
         Get
             Return empPhone
         End Get
-        Set(value As Integer)
+        Set(value As String)
             empPhone = value
         End Set
     End Property
