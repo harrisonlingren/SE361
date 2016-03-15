@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormCustomers
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,20 @@ Partial Class FormCustomers
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnAddCust = New System.Windows.Forms.Button()
         Me.btnEditCust = New System.Windows.Forms.Button()
         Me.btnDelCust = New System.Windows.Forms.Button()
-        Me.listViewCust = New System.Windows.Forms.ListView()
-        Me.custID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.custEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnSaveCust = New System.Windows.Forms.Button()
+        Me.dvCustomer = New System.Windows.Forms.DataGridView()
+        Me.CustomersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Se361DataSet = New TeamProject.se361DataSet()
+        Me.CustomersTableAdapter = New TeamProject.se361DataSetTableAdapters.CustomersTableAdapter()
+        CType(Me.dvCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Se361DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAddCust
@@ -63,43 +65,6 @@ Partial Class FormCustomers
         Me.btnDelCust.Text = "Delete"
         Me.btnDelCust.UseVisualStyleBackColor = True
         '
-        'listViewCust
-        '
-        Me.listViewCust.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.custID, Me.custName, Me.custAddress, Me.custPhone, Me.custEmail})
-        Me.listViewCust.FullRowSelect = True
-        Me.listViewCust.GridLines = True
-        Me.listViewCust.Location = New System.Drawing.Point(12, 12)
-        Me.listViewCust.Name = "listViewCust"
-        Me.listViewCust.Size = New System.Drawing.Size(545, 271)
-        Me.listViewCust.TabIndex = 3
-        Me.listViewCust.UseCompatibleStateImageBehavior = False
-        Me.listViewCust.View = System.Windows.Forms.View.Details
-        '
-        'custID
-        '
-        Me.custID.Text = "ID"
-        Me.custID.Width = 41
-        '
-        'custName
-        '
-        Me.custName.Text = "Name"
-        Me.custName.Width = 114
-        '
-        'custAddress
-        '
-        Me.custAddress.Text = "Address"
-        Me.custAddress.Width = 152
-        '
-        'custPhone
-        '
-        Me.custPhone.Text = "Phone"
-        Me.custPhone.Width = 93
-        '
-        'custEmail
-        '
-        Me.custEmail.Text = "Email"
-        Me.custEmail.Width = 140
-        '
         'btnSaveCust
         '
         Me.btnSaveCust.Location = New System.Drawing.Point(447, 289)
@@ -109,18 +74,46 @@ Partial Class FormCustomers
         Me.btnSaveCust.Text = "Save and Close"
         Me.btnSaveCust.UseVisualStyleBackColor = True
         '
+        'dvCustomer
+        '
+        Me.dvCustomer.AllowUserToResizeRows = False
+        Me.dvCustomer.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        Me.dvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvCustomer.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.dvCustomer.Location = New System.Drawing.Point(12, 12)
+        Me.dvCustomer.Name = "dvCustomer"
+        Me.dvCustomer.Size = New System.Drawing.Size(545, 271)
+        Me.dvCustomer.TabIndex = 4
+        '
+        'CustomersBindingSource
+        '
+        Me.CustomersBindingSource.DataMember = "Customers"
+        Me.CustomersBindingSource.DataSource = Me.Se361DataSet
+        '
+        'Se361DataSet
+        '
+        Me.Se361DataSet.DataSetName = "se361DataSet"
+        Me.Se361DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomersTableAdapter
+        '
+        Me.CustomersTableAdapter.ClearBeforeFill = True
+        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(569, 324)
-        Me.Controls.Add(Me.listViewCust)
+        Me.Controls.Add(Me.dvCustomer)
         Me.Controls.Add(Me.btnSaveCust)
         Me.Controls.Add(Me.btnDelCust)
         Me.Controls.Add(Me.btnEditCust)
         Me.Controls.Add(Me.btnAddCust)
         Me.Name = "FormCustomers"
         Me.Text = "FormCustomers"
+        CType(Me.dvCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Se361DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -128,11 +121,9 @@ Partial Class FormCustomers
     Friend WithEvents btnAddCust As Button
     Friend WithEvents btnEditCust As Button
     Friend WithEvents btnDelCust As Button
-    Friend WithEvents listViewCust As ListView
-    Friend WithEvents custID As ColumnHeader
-    Friend WithEvents custName As ColumnHeader
-    Friend WithEvents custAddress As ColumnHeader
-    Friend WithEvents custPhone As ColumnHeader
-    Friend WithEvents custEmail As ColumnHeader
     Private WithEvents btnSaveCust As System.Windows.Forms.Button
+    Friend WithEvents dvCustomer As DataGridView
+    Friend WithEvents Se361DataSet As se361DataSet
+    Friend WithEvents CustomersBindingSource As BindingSource
+    Friend WithEvents CustomersTableAdapter As se361DataSetTableAdapters.CustomersTableAdapter
 End Class

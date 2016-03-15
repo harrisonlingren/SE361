@@ -1,9 +1,12 @@
 ﻿Imports System
 Imports System.IO
 Imports System.Text
-Imports System.Security.AccessControl
+Imports MySql.Data.MySqlClient
 
 Public Class FormCustomers
+
+    Private da = New MySqlDataAdapter()
+    Private dt = New DataTable
 
     Private selectedIndex As Integer
 
@@ -11,101 +14,48 @@ Public Class FormCustomers
         FormEditCustomer.Show()
     End Sub
 
-    Private Sub listViewCust_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listViewCust.SelectedIndexChanged
-        btnEditCust.Enabled = True
-
-        Try
-            selectedIndex = listViewCust.SelectedItems(0).Index
-        Catch ex As Exception
-            selectedIndex = 0
-        End Try
-
-    End Sub
-
-    Private Sub btnEditCust_Click(sender As Object, e As EventArgs) Handles btnEditCust.Click
-        FormEditCustomer.loadCustomer(selectedIndex)
-    End Sub
-
-    Private Sub listViewCust_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles listViewCust.MouseDoubleClick
-        FormEditCustomer.loadCustomer(selectedIndex)
-    End Sub
-
     Private Sub btnSaveCust_Click(sender As Object, e As EventArgs) Handles btnSaveCust.Click
+        dvCustomer.EndEdit()
+        da.Update(dt)
         Me.Close()
     End Sub
 
-    Private Sub saveCustomers()
-
-        Dim path As String
-        Dim path2 As String
-        path2 = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase)
-        path = path2 & "\data"
-        path = path.Remove(0, 6)
-
-        If Not System.IO.Directory.Exists(path) Then
-            System.IO.Directory.CreateDirectory(path)
-        End If
-
-        If System.IO.File.Exists(path & "\customers.txt") = True Then
-            Dim result As DialogResult
-            result = MessageBox.Show("Overwrite existing data?", "Save", MessageBoxButtons.YesNo)
-            If result = Windows.Forms.DialogResult.Yes Then
-                System.IO.File.Delete(path & "\customers.txt")
-            Else
-                Exit Sub
-            End If
-        End If
-
-        Using fileout As StreamWriter = File.CreateText(path & "\customers.txt")
-            For Each item As ListViewItem In listViewCust.Items
-                If Not item.Text = "" Then
-                    fileout.WriteLine(item.Text)
-                    fileout.WriteLine(item.SubItems(1).Text)
-                    fileout.WriteLine(item.SubItems(2).Text)
-                    fileout.WriteLine(item.SubItems(3).Text)
-                    fileout.WriteLine(item.SubItems(4).Text)
-                End If
-            Next
-        End Using
-
-    End Sub
-
-    Private Sub FormCustomers_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Dim result As DialogResult
-        result = MessageBox.Show("Do you want to save your changes?", "Save?", MessageBoxButtons.YesNo)
-        If result = Windows.Forms.DialogResult.Yes Then
-            saveCustomers()
-        End If
-    End Sub
-
     Private Sub FormCustomers_Load(sender As Object, e As EventArgs) Handles Me.Load
-        loadCustomers()
+        'TODO: This line of code loads data into the 'Se361DataSet.Customers' table. You can move, or remove it, as needed.
+        loadDataCust()
     End Sub
 
-    Private Sub loadCustomers()
+    Private Sub loadDataCust()
+        Dim dbConn As MySqlConnection = New MySqlConnection(FormMain.dbString)
 
-        Dim path As String
-        Dim path2 As String
-        Dim path3 As String
-        path2 = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase)
-        path = path2 & "\data"
-        path = path.Remove(0, 6)
-        path3 = path & "\customers.txt"
+        dvCustomer.Columns.Clear()
+        Dim cmd As MySqlCommand = New MySqlCommand
+        Dim stm As String
 
-        If System.IO.File.Exists(path3) = True Then
-            Using filein As StreamReader = File.OpenText(path3)
-                Dim lineCount As Integer = File.ReadAllLines(path3).Length
-
-                For i As Integer = 0 To lineCount Step 1
-
-                    listViewCust.Items.Add(filein.ReadLine())
-                    listViewCust.Items(listViewCust.Items.Count - 1).SubItems.Add(filein.ReadLine())
-                    listViewCust.Items(listViewCust.Items.Count - 1).SubItems.Add(filein.ReadLine())
-                    listViewCust.Items(listViewCust.Items.Count - 1).SubItems.Add(filein.ReadLine())
-                    listViewCust.Items(listViewCust.Items.Count - 1).SubItems.Add(filein.ReadLine())
-                Next
-            End Using
+        If dbConn.State = ConnectionState.Closed Then
+            dbConn.Open()
         End If
 
+        stm = "SELECT * FROM Customers"
+
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = stm
+        cmd.Connection = dbConn
+
+        da = New MySqlDataAdapter(cmd)
+
+        da.Fill(dt)
+
+        Dim cb As New MySqlCommandBuilder(da)
+
+        With dvCustomer
+            .AutoGenerateColumns = True
+            .DataSource = dt
+        End With
+
+        cmd.Dispose()
+        cmd = Nothing
+        dbConn.Close()
+        dbConn.Dispose()
     End Sub
 End Class
