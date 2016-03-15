@@ -31,11 +31,12 @@ Partial Class FormCustomers
         Me.custAddress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.custPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.custEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnSaveCust = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnAddCust
         '
-        Me.btnAddCust.Location = New System.Drawing.Point(113, 289)
+        Me.btnAddCust.Location = New System.Drawing.Point(12, 289)
         Me.btnAddCust.Name = "btnAddCust"
         Me.btnAddCust.Size = New System.Drawing.Size(110, 23)
         Me.btnAddCust.TabIndex = 0
@@ -45,7 +46,7 @@ Partial Class FormCustomers
         'btnEditCust
         '
         Me.btnEditCust.Enabled = False
-        Me.btnEditCust.Location = New System.Drawing.Point(229, 289)
+        Me.btnEditCust.Location = New System.Drawing.Point(128, 289)
         Me.btnEditCust.Name = "btnEditCust"
         Me.btnEditCust.Size = New System.Drawing.Size(110, 23)
         Me.btnEditCust.TabIndex = 1
@@ -55,7 +56,7 @@ Partial Class FormCustomers
         'btnDelCust
         '
         Me.btnDelCust.Enabled = False
-        Me.btnDelCust.Location = New System.Drawing.Point(345, 289)
+        Me.btnDelCust.Location = New System.Drawing.Point(244, 289)
         Me.btnDelCust.Name = "btnDelCust"
         Me.btnDelCust.Size = New System.Drawing.Size(110, 23)
         Me.btnDelCust.TabIndex = 2
@@ -99,12 +100,22 @@ Partial Class FormCustomers
         Me.custEmail.Text = "Email"
         Me.custEmail.Width = 140
         '
+        'btnSaveCust
+        '
+        Me.btnSaveCust.Location = New System.Drawing.Point(447, 289)
+        Me.btnSaveCust.Name = "btnSaveCust"
+        Me.btnSaveCust.Size = New System.Drawing.Size(110, 23)
+        Me.btnSaveCust.TabIndex = 2
+        Me.btnSaveCust.Text = "Save and Close"
+        Me.btnSaveCust.UseVisualStyleBackColor = True
+        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(569, 324)
         Me.Controls.Add(Me.listViewCust)
+        Me.Controls.Add(Me.btnSaveCust)
         Me.Controls.Add(Me.btnDelCust)
         Me.Controls.Add(Me.btnEditCust)
         Me.Controls.Add(Me.btnAddCust)
@@ -123,4 +134,5 @@ Partial Class FormCustomers
     Friend WithEvents custAddress As ColumnHeader
     Friend WithEvents custPhone As ColumnHeader
     Friend WithEvents custEmail As ColumnHeader
+    Private WithEvents btnSaveCust As System.Windows.Forms.Button
 End Class
