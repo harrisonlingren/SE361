@@ -51,15 +51,12 @@
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MySql.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -81,69 +78,69 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cAppointment.vb" />
-    <Compile Include="cCustomer.vb" />
-    <Compile Include="cEmployee.vb" />
-    <Compile Include="cInvoice.vb" />
-    <Compile Include="cJob.vb" />
-    <Compile Include="FormAppts.Designer.vb">
+    <Compile Include="Appointment\cAppointment.vb" />
+    <Compile Include="Customer\cCustomer.vb" />
+    <Compile Include="Employee\cEmployee.vb" />
+    <Compile Include="Invoice\cInvoice.vb" />
+    <Compile Include="Job\cJob.vb" />
+    <Compile Include="Appointment\FormAppts.Designer.vb">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAppts.vb">
+    <Compile Include="Appointment\FormAppts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomers.Designer.vb">
+    <Compile Include="Customer\FormCustomers.Designer.vb">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomers.vb">
+    <Compile Include="Customer\FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditAppt.Designer.vb">
+    <Compile Include="Appointment\FormEditAppt.Designer.vb">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditAppt.vb">
+    <Compile Include="Appointment\FormEditAppt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditCustomer.Designer.vb">
+    <Compile Include="Customer\FormEditCustomer.Designer.vb">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditCustomer.vb">
+    <Compile Include="Customer\FormEditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditEmployee.Designer.vb">
+    <Compile Include="Employee\FormEditEmployee.Designer.vb">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditEmployee.vb">
+    <Compile Include="Employee\FormEditEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditInvoice.Designer.vb">
+    <Compile Include="Invoice\FormEditInvoice.Designer.vb">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditInvoice.vb">
+    <Compile Include="Invoice\FormEditInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditJob.Designer.vb">
+    <Compile Include="Job\FormEditJob.Designer.vb">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditJob.vb">
+    <Compile Include="Job\FormEditJob.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmployees.Designer.vb">
+    <Compile Include="Employee\FormEmployees.Designer.vb">
       <DependentUpon>FormEmployees.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEmployees.vb">
+    <Compile Include="Employee\FormEmployees.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInvoice.Designer.vb">
+    <Compile Include="Invoice\FormInvoice.Designer.vb">
       <DependentUpon>FormInvoice.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormInvoice.vb">
+    <Compile Include="Invoice\FormInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormJobs.Designer.vb">
+    <Compile Include="Job\FormJobs.Designer.vb">
       <DependentUpon>FormJobs.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormJobs.vb">
+    <Compile Include="Job\FormJobs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.vb">
@@ -168,41 +165,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="se361DataSet.Designer.vb">
+    <Compile Include="se361DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>se361DataSet.xsd</DependentUpon>
+      <DependentUpon>se361DataSet1.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormAppts.resx">
+    <EmbeddedResource Include="Appointment\FormAppts.resx">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomers.resx">
+    <EmbeddedResource Include="Customer\FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditAppt.resx">
+    <EmbeddedResource Include="Appointment\FormEditAppt.resx">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditCustomer.resx">
+    <EmbeddedResource Include="Customer\FormEditCustomer.resx">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditEmployee.resx">
+    <EmbeddedResource Include="Employee\FormEditEmployee.resx">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditInvoice.resx">
+    <EmbeddedResource Include="Invoice\FormEditInvoice.resx">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditJob.resx">
+    <EmbeddedResource Include="Job\FormEditJob.resx">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmployees.resx">
+    <EmbeddedResource Include="Employee\FormEmployees.resx">
       <DependentUpon>FormEmployees.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInvoice.resx">
+    <EmbeddedResource Include="Invoice\FormInvoice.resx">
       <DependentUpon>FormInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormJobs.resx">
+    <EmbeddedResource Include="Job\FormJobs.resx">
       <DependentUpon>FormJobs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
@@ -227,16 +224,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="se361DataSet.xsc">
-      <DependentUpon>se361DataSet.xsd</DependentUpon>
+    <None Include="se361DataSet1.xsc">
+      <DependentUpon>se361DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="se361DataSet.xsd">
+    <None Include="se361DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>se361DataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>se361DataSet1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="se361DataSet.xss">
-      <DependentUpon>se361DataSet.xsd</DependentUpon>
+    <None Include="se361DataSet1.xss">
+      <DependentUpon>se361DataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

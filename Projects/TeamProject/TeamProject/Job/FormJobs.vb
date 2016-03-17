@@ -10,15 +10,9 @@
         FormEditJob.loadJob(selectedIndex)
     End Sub
 
-    Private Sub listViewJobs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles listViewJobs.SelectedIndexChanged
-
-        btnEditJob.Enabled = True
-
-        Try
-            selectedIndex = listViewJobs.SelectedItems(0).Index
-        Catch ex As Exception
-            selectedIndex = 0
-        End Try
+    Private Sub FormJobs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Se361DataSet.Jobs' table. You can move, or remove it, as needed.
+        Me.JobsTableAdapter.Fill(Me.Se361DataSet.Jobs)
 
     End Sub
 End Class
