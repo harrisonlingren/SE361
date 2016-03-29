@@ -98,31 +98,31 @@ Partial Class FormCustomers
         'CustidDataGridViewTextBoxColumn
         '
         Me.CustidDataGridViewTextBoxColumn.DataPropertyName = "cust_id"
-        Me.CustidDataGridViewTextBoxColumn.HeaderText = "cust_id"
+        Me.CustidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.CustidDataGridViewTextBoxColumn.Name = "CustidDataGridViewTextBoxColumn"
         '
         'CustnameDataGridViewTextBoxColumn
         '
         Me.CustnameDataGridViewTextBoxColumn.DataPropertyName = "cust_name"
-        Me.CustnameDataGridViewTextBoxColumn.HeaderText = "cust_name"
+        Me.CustnameDataGridViewTextBoxColumn.HeaderText = "Name"
         Me.CustnameDataGridViewTextBoxColumn.Name = "CustnameDataGridViewTextBoxColumn"
         '
         'CustaddrDataGridViewTextBoxColumn
         '
         Me.CustaddrDataGridViewTextBoxColumn.DataPropertyName = "cust_addr"
-        Me.CustaddrDataGridViewTextBoxColumn.HeaderText = "cust_addr"
+        Me.CustaddrDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.CustaddrDataGridViewTextBoxColumn.Name = "CustaddrDataGridViewTextBoxColumn"
         '
         'CustphoneDataGridViewTextBoxColumn
         '
         Me.CustphoneDataGridViewTextBoxColumn.DataPropertyName = "cust_phone"
-        Me.CustphoneDataGridViewTextBoxColumn.HeaderText = "cust_phone"
+        Me.CustphoneDataGridViewTextBoxColumn.HeaderText = "Phone"
         Me.CustphoneDataGridViewTextBoxColumn.Name = "CustphoneDataGridViewTextBoxColumn"
         '
         'CustemailDataGridViewTextBoxColumn
         '
         Me.CustemailDataGridViewTextBoxColumn.DataPropertyName = "cust_email"
-        Me.CustemailDataGridViewTextBoxColumn.HeaderText = "cust_email"
+        Me.CustemailDataGridViewTextBoxColumn.HeaderText = "Email"
         Me.CustemailDataGridViewTextBoxColumn.Name = "CustemailDataGridViewTextBoxColumn"
         '
         'CustomersBindingSource1
@@ -172,10 +172,10 @@ Partial Class FormCustomers
     Friend WithEvents Se361DataSet As se361DataSet
     Friend WithEvents CustomersBindingSource As BindingSource
     Friend WithEvents CustomersTableAdapter As se361DataSetTableAdapters.CustomersTableAdapter
+    Friend WithEvents CustomersBindingSource1 As BindingSource
     Friend WithEvents CustidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustaddrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustphoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustemailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustomersBindingSource1 As BindingSource
 End Class
