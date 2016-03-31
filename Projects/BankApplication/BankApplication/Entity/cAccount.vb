@@ -4,18 +4,6 @@
     Private n As String
     Private b As Decimal
 
-    Public Sub New(na As String, ba As Decimal, transL As cTransactionList)
-        n = na
-        b = ba
-        tl = transL
-    End Sub
-
-    Public Sub New(na As String, ba As Decimal)
-        n = na
-        b = ba
-        tl = New cTransactionList()
-    End Sub
-
     Public Sub New()
         n = ""
         b = 0.0

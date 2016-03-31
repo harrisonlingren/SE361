@@ -5,13 +5,15 @@
     Private d As Date
     Private t As String
 
-    Public Sub New(na As String, am As Decimal, da As Date, ty As String)
-        n = na
-        a = am
-        d = da
-        t = ty
+    ' new transaction, init method
+    Public Sub New()
+        n = String.Empty
+        a = 0.0
+        d = Date.Now
+        t = String.Empty
     End Sub
 
+    ' get/set name
     Public Property name As String
         Get
             Return n
@@ -21,6 +23,7 @@
         End Set
     End Property
 
+    ' get/set amount
     Public Property amount As Decimal
         Get
             Return a
@@ -30,6 +33,7 @@
         End Set
     End Property
 
+    ' get/set datetime
     Public Property datetime As Date
         Get
             Return d
@@ -39,6 +43,7 @@
         End Set
     End Property
 
+    ' get/set type
     Public Property type As String
         Get
             Return t
@@ -48,8 +53,9 @@
         End Set
     End Property
 
-    Public Function ToString() As String
-        Return d & "   " & n & "   " & a
+    ' return transaction as string
+    Public Function ToString2() As String
+        Return d & "   " & n & "   " & a.ToString("C2")
     End Function
 
 End Class

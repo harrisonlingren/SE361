@@ -76,7 +76,7 @@ Partial Class FormMain
         Me.comboAccount.Location = New System.Drawing.Point(68, 12)
         Me.comboAccount.Name = "comboAccount"
         Me.comboAccount.Size = New System.Drawing.Size(121, 21)
-        Me.comboAccount.TabIndex = 1
+        Me.comboAccount.TabIndex = 0
         '
         'GroupBox1
         '
@@ -85,7 +85,7 @@ Partial Class FormMain
         Me.GroupBox1.Location = New System.Drawing.Point(12, 49)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(235, 71)
-        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Deposit"
         '
@@ -112,7 +112,7 @@ Partial Class FormMain
         Me.GroupBox2.Location = New System.Drawing.Point(12, 126)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(235, 71)
-        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Withdrawl"
         '
@@ -161,7 +161,7 @@ Partial Class FormMain
         Me.GroupBox3.Location = New System.Drawing.Point(267, 49)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(235, 148)
-        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabIndex = 5
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Transfer"
         '
@@ -170,7 +170,7 @@ Partial Class FormMain
         Me.txtTransferAmt.Location = New System.Drawing.Point(108, 80)
         Me.txtTransferAmt.Name = "txtTransferAmt"
         Me.txtTransferAmt.Size = New System.Drawing.Size(121, 20)
-        Me.txtTransferAmt.TabIndex = 5
+        Me.txtTransferAmt.TabIndex = 2
         '
         'Label8
         '
@@ -197,7 +197,7 @@ Partial Class FormMain
         Me.comboReceiveAcct.Location = New System.Drawing.Point(108, 53)
         Me.comboReceiveAcct.Name = "comboReceiveAcct"
         Me.comboReceiveAcct.Size = New System.Drawing.Size(121, 21)
-        Me.comboReceiveAcct.TabIndex = 3
+        Me.comboReceiveAcct.TabIndex = 1
         '
         'comboTransferAcct
         '
@@ -206,7 +206,7 @@ Partial Class FormMain
         Me.comboTransferAcct.Location = New System.Drawing.Point(108, 26)
         Me.comboTransferAcct.Name = "comboTransferAcct"
         Me.comboTransferAcct.Size = New System.Drawing.Size(121, 21)
-        Me.comboTransferAcct.TabIndex = 3
+        Me.comboTransferAcct.TabIndex = 0
         '
         'Label3
         '
@@ -222,7 +222,7 @@ Partial Class FormMain
         Me.btnTransfer.Location = New System.Drawing.Point(79, 115)
         Me.btnTransfer.Name = "btnTransfer"
         Me.btnTransfer.Size = New System.Drawing.Size(75, 23)
-        Me.btnTransfer.TabIndex = 1
+        Me.btnTransfer.TabIndex = 3
         Me.btnTransfer.Text = "Transfer"
         Me.btnTransfer.UseVisualStyleBackColor = True
         '
@@ -236,7 +236,7 @@ Partial Class FormMain
         Me.GroupBox4.Location = New System.Drawing.Point(508, 49)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(235, 148)
-        Me.GroupBox4.TabIndex = 2
+        Me.GroupBox4.TabIndex = 6
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Check"
         '
@@ -245,14 +245,14 @@ Partial Class FormMain
         Me.txtCheckAmt.Location = New System.Drawing.Point(108, 26)
         Me.txtCheckAmt.Name = "txtCheckAmt"
         Me.txtCheckAmt.Size = New System.Drawing.Size(121, 20)
-        Me.txtCheckAmt.TabIndex = 5
+        Me.txtCheckAmt.TabIndex = 0
         '
         'txtCheckName
         '
         Me.txtCheckName.Location = New System.Drawing.Point(108, 74)
         Me.txtCheckName.Name = "txtCheckName"
         Me.txtCheckName.Size = New System.Drawing.Size(121, 20)
-        Me.txtCheckName.TabIndex = 5
+        Me.txtCheckName.TabIndex = 1
         '
         'Label5
         '
@@ -277,7 +277,7 @@ Partial Class FormMain
         Me.btnCheck.Location = New System.Drawing.Point(79, 115)
         Me.btnCheck.Name = "btnCheck"
         Me.btnCheck.Size = New System.Drawing.Size(75, 23)
-        Me.btnCheck.TabIndex = 1
+        Me.btnCheck.TabIndex = 2
         Me.btnCheck.Text = "Sign Check"
         Me.btnCheck.UseVisualStyleBackColor = True
         '
@@ -286,7 +286,7 @@ Partial Class FormMain
         Me.btnSave.Location = New System.Drawing.Point(374, 4)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(128, 23)
-        Me.btnSave.TabIndex = 5
+        Me.btnSave.TabIndex = 1
         Me.btnSave.Text = "Save Accounts to File"
         Me.btnSave.UseVisualStyleBackColor = True
         '
@@ -295,7 +295,7 @@ Partial Class FormMain
         Me.btnLoad.Location = New System.Drawing.Point(374, 28)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(128, 23)
-        Me.btnLoad.TabIndex = 5
+        Me.btnLoad.TabIndex = 2
         Me.btnLoad.Text = "Load Account from File"
         Me.btnLoad.UseVisualStyleBackColor = True
         '
@@ -321,7 +321,7 @@ Partial Class FormMain
         Me.btnClear.Location = New System.Drawing.Point(180, 388)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(157, 23)
-        Me.btnClear.TabIndex = 6
+        Me.btnClear.TabIndex = 7
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
@@ -330,7 +330,7 @@ Partial Class FormMain
         Me.btnExit.Location = New System.Drawing.Point(418, 388)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(157, 23)
-        Me.btnExit.TabIndex = 6
+        Me.btnExit.TabIndex = 8
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '

@@ -70,15 +70,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cAccountManager.vb" />
-    <Compile Include="cAccount.vb" />
-    <Compile Include="cTransaction.vb" />
-    <Compile Include="cFileManager.vb" />
-    <Compile Include="cTransactionList.vb" />
-    <Compile Include="FormMain.vb">
+    <Compile Include="Control\cAccountManager.vb" />
+    <Compile Include="Entity\cAccount.vb" />
+    <Compile Include="Entity\cTransaction.vb" />
+    <Compile Include="Boundary\cFileManager.vb" />
+    <Compile Include="Control\cTransactionList.vb" />
+    <Compile Include="Boundary\FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.vb">
+    <Compile Include="Boundary\FormMain.Designer.vb">
       <DependentUpon>FormMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -99,7 +99,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Boundary\FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -110,6 +110,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
