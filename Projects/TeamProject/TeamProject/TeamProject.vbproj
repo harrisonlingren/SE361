@@ -78,11 +78,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ent\cAppointment.vb" />
-    <Compile Include="Ent\cCustomer.vb" />
-    <Compile Include="Ent\cEmployee.vb" />
-    <Compile Include="Ent\cInvoice.vb" />
-    <Compile Include="Ent\cJob.vb" />
+    <Compile Include="Entity\cAppointment.vb" />
+    <Compile Include="Entity\cCustomer.vb" />
+    <Compile Include="Entity\cEmployee.vb" />
+    <Compile Include="Entity\cInvoice.vb" />
+    <Compile Include="Entity\cJob.vb" />
     <Compile Include="Boundary\Appointment\FormAppts.Designer.vb">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </Compile>
