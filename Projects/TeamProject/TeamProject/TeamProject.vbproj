@@ -169,9 +169,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="TeamProjectDataSet.vb">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -229,14 +231,17 @@
     <None Include="App.config" />
     <None Include="TeamProjectDataSet.xsc">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="TeamProjectDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TeamProjectDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="TeamProjectDataSet.xss">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -244,7 +249,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TeamProject.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

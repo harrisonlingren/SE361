@@ -23,9 +23,13 @@ Public Class FormCustomers
     Private Sub btnDelCust_Click(sender As Object, e As EventArgs) Handles btnDelCust.Click
         Dim custName As String = CType(dvCust.CurrentRow.Cells(1).Value, String)
         Console.WriteLine(custName & " to be deleted.")
-        MessageBox.Show("Are you sure you want to delete '" & custName & "'?")
-        CustomerTableAdapter.delQuery(selectedIndex)
+        Dim resp = MessageBox.Show("Are you sure you want to delete '" & custName & "'?", "Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        'CustomerTableAdapter.delQuery(selectedIndex)
 
+        If resp = DialogResult.Yes Then
+            Dim data As DataGridViewCellCollection = dvCust.Rows(selectedIndex).Cells
+            CustomerTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value, data(3).Value, data(4).Value)
+        End If
         Me.reloadData()
     End Sub
 
@@ -35,7 +39,6 @@ Public Class FormCustomers
     End Sub
 
     Public Sub reloadData()
-        Me.CustomerTableAdapter.Update(Me.TeamProjectDataSet.Customer)
         Me.CustomerTableAdapter.Fill(Me.TeamProjectDataSet.Customer)
     End Sub
 
