@@ -78,75 +78,75 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointment\cAppointment.vb" />
-    <Compile Include="Customer\cCustomer.vb" />
-    <Compile Include="Employee\cEmployee.vb" />
-    <Compile Include="Invoice\cInvoice.vb" />
-    <Compile Include="Job\cJob.vb" />
-    <Compile Include="Appointment\FormAppts.Designer.vb">
+    <Compile Include="Ent\cAppointment.vb" />
+    <Compile Include="Ent\cCustomer.vb" />
+    <Compile Include="Ent\cEmployee.vb" />
+    <Compile Include="Ent\cInvoice.vb" />
+    <Compile Include="Ent\cJob.vb" />
+    <Compile Include="Boundary\Appointment\FormAppts.Designer.vb">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </Compile>
-    <Compile Include="Appointment\FormAppts.vb">
+    <Compile Include="Boundary\Appointment\FormAppts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\FormCustomers.Designer.vb">
+    <Compile Include="Boundary\Customer\FormCustomers.Designer.vb">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer\FormCustomers.vb">
+    <Compile Include="Boundary\Customer\FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Appointment\FormEditAppt.Designer.vb">
+    <Compile Include="Boundary\Appointment\FormEditAppt.Designer.vb">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </Compile>
-    <Compile Include="Appointment\FormEditAppt.vb">
+    <Compile Include="Boundary\Appointment\FormEditAppt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customer\FormEditCustomer.Designer.vb">
+    <Compile Include="Boundary\Customer\FormEditCustomer.Designer.vb">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </Compile>
-    <Compile Include="Customer\FormEditCustomer.vb">
+    <Compile Include="Boundary\Customer\FormEditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee\FormEditEmployee.Designer.vb">
+    <Compile Include="Boundary\Employee\FormEditEmployee.Designer.vb">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Employee\FormEditEmployee.vb">
+    <Compile Include="Boundary\Employee\FormEditEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invoice\FormEditInvoice.Designer.vb">
+    <Compile Include="Boundary\Invoice\FormEditInvoice.Designer.vb">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </Compile>
-    <Compile Include="Invoice\FormEditInvoice.vb">
+    <Compile Include="Boundary\Invoice\FormEditInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Job\FormEditJob.Designer.vb">
+    <Compile Include="Boundary\Job\FormEditJob.Designer.vb">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </Compile>
-    <Compile Include="Job\FormEditJob.vb">
+    <Compile Include="Boundary\Job\FormEditJob.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee\FormEmployees.Designer.vb">
+    <Compile Include="Boundary\Employee\FormEmployees.Designer.vb">
       <DependentUpon>FormEmployees.vb</DependentUpon>
     </Compile>
-    <Compile Include="Employee\FormEmployees.vb">
+    <Compile Include="Boundary\Employee\FormEmployees.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invoice\FormInvoice.Designer.vb">
+    <Compile Include="Boundary\Invoice\FormInvoice.Designer.vb">
       <DependentUpon>FormInvoice.vb</DependentUpon>
     </Compile>
-    <Compile Include="Invoice\FormInvoice.vb">
+    <Compile Include="Boundary\Invoice\FormInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Job\FormJobs.Designer.vb">
+    <Compile Include="Boundary\Job\FormJobs.Designer.vb">
       <DependentUpon>FormJobs.vb</DependentUpon>
     </Compile>
-    <Compile Include="Job\FormJobs.vb">
+    <Compile Include="Boundary\Job\FormJobs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.vb">
+    <Compile Include="Boundary\FormMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.vb">
+    <Compile Include="Boundary\FormMain.Designer.vb">
       <DependentUpon>FormMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -167,37 +167,37 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Appointment\FormAppts.resx">
+    <EmbeddedResource Include="Boundary\Appointment\FormAppts.resx">
       <DependentUpon>FormAppts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\FormCustomers.resx">
+    <EmbeddedResource Include="Boundary\Customer\FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Appointment\FormEditAppt.resx">
+    <EmbeddedResource Include="Boundary\Appointment\FormEditAppt.resx">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer\FormEditCustomer.resx">
+    <EmbeddedResource Include="Boundary\Customer\FormEditCustomer.resx">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\FormEditEmployee.resx">
+    <EmbeddedResource Include="Boundary\Employee\FormEditEmployee.resx">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoice\FormEditInvoice.resx">
+    <EmbeddedResource Include="Boundary\Invoice\FormEditInvoice.resx">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Job\FormEditJob.resx">
+    <EmbeddedResource Include="Boundary\Job\FormEditJob.resx">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\FormEmployees.resx">
+    <EmbeddedResource Include="Boundary\Employee\FormEmployees.resx">
       <DependentUpon>FormEmployees.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoice\FormInvoice.resx">
+    <EmbeddedResource Include="Boundary\Invoice\FormInvoice.resx">
       <DependentUpon>FormInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Job\FormJobs.resx">
+    <EmbeddedResource Include="Boundary\Job\FormJobs.resx">
       <DependentUpon>FormJobs.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Boundary\FormMain.resx">
       <DependentUpon>FormMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
