@@ -22,12 +22,23 @@ Partial Class FormCustomers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnAddCust = New System.Windows.Forms.Button()
         Me.btnEditCust = New System.Windows.Forms.Button()
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnSaveCust = New System.Windows.Forms.Button()
         Me.dvCust = New System.Windows.Forms.DataGridView()
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.CustomerTableAdapter()
+        Me.CustidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustemailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvCust, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAddCust
@@ -69,11 +80,66 @@ Partial Class FormCustomers
         '
         'dvCust
         '
+        Me.dvCust.AllowUserToAddRows = False
+        Me.dvCust.AllowUserToDeleteRows = False
+        Me.dvCust.AutoGenerateColumns = False
         Me.dvCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvCust.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustidDataGridViewTextBoxColumn, Me.CustnameDataGridViewTextBoxColumn, Me.CustaddrDataGridViewTextBoxColumn, Me.CustphoneDataGridViewTextBoxColumn, Me.CustemailDataGridViewTextBoxColumn})
+        Me.dvCust.DataSource = Me.CustomerBindingSource
         Me.dvCust.Location = New System.Drawing.Point(12, 12)
         Me.dvCust.Name = "dvCust"
+        Me.dvCust.ReadOnly = True
         Me.dvCust.Size = New System.Drawing.Size(545, 271)
         Me.dvCust.TabIndex = 8
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerBindingSource
+        '
+        Me.CustomerBindingSource.DataMember = "Customer"
+        Me.CustomerBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'CustidDataGridViewTextBoxColumn
+        '
+        Me.CustidDataGridViewTextBoxColumn.DataPropertyName = "cust_id"
+        Me.CustidDataGridViewTextBoxColumn.HeaderText = "cust_id"
+        Me.CustidDataGridViewTextBoxColumn.Name = "CustidDataGridViewTextBoxColumn"
+        Me.CustidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustnameDataGridViewTextBoxColumn
+        '
+        Me.CustnameDataGridViewTextBoxColumn.DataPropertyName = "cust_name"
+        Me.CustnameDataGridViewTextBoxColumn.HeaderText = "cust_name"
+        Me.CustnameDataGridViewTextBoxColumn.Name = "CustnameDataGridViewTextBoxColumn"
+        Me.CustnameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustaddrDataGridViewTextBoxColumn
+        '
+        Me.CustaddrDataGridViewTextBoxColumn.DataPropertyName = "cust_addr"
+        Me.CustaddrDataGridViewTextBoxColumn.HeaderText = "cust_addr"
+        Me.CustaddrDataGridViewTextBoxColumn.Name = "CustaddrDataGridViewTextBoxColumn"
+        Me.CustaddrDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustphoneDataGridViewTextBoxColumn
+        '
+        Me.CustphoneDataGridViewTextBoxColumn.DataPropertyName = "cust_phone"
+        Me.CustphoneDataGridViewTextBoxColumn.HeaderText = "cust_phone"
+        Me.CustphoneDataGridViewTextBoxColumn.Name = "CustphoneDataGridViewTextBoxColumn"
+        Me.CustphoneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustemailDataGridViewTextBoxColumn
+        '
+        Me.CustemailDataGridViewTextBoxColumn.DataPropertyName = "cust_email"
+        Me.CustemailDataGridViewTextBoxColumn.HeaderText = "cust_email"
+        Me.CustemailDataGridViewTextBoxColumn.Name = "CustemailDataGridViewTextBoxColumn"
+        Me.CustemailDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormCustomers
         '
@@ -88,6 +154,8 @@ Partial Class FormCustomers
         Me.Name = "FormCustomers"
         Me.Text = "FormCustomers"
         CType(Me.dvCust, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,4 +165,12 @@ Partial Class FormCustomers
     Friend WithEvents btnDelCust As Button
     Private WithEvents btnSaveCust As System.Windows.Forms.Button
     Friend WithEvents dvCust As DataGridView
+    Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
+    Friend WithEvents CustomerBindingSource As BindingSource
+    Friend WithEvents CustomerTableAdapter As TeamProjectDataSetTableAdapters.CustomerTableAdapter
+    Friend WithEvents CustidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustaddrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustphoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustemailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

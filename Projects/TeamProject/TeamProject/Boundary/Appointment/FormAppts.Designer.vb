@@ -22,19 +22,34 @@ Partial Class FormAppts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dvAppts = New System.Windows.Forms.DataGridView()
         Me.btnSaveAppt = New System.Windows.Forms.Button()
         Me.btnDelAppt = New System.Windows.Forms.Button()
         Me.btnEditAppt = New System.Windows.Forms.Button()
         Me.btnAddAppt = New System.Windows.Forms.Button()
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.AppointmentBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AppointmentTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.AppointmentTableAdapter()
+        Me.ApptidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApptdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApptaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvAppts, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AppointmentBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dvAppts
         '
+        Me.dvAppts.AllowUserToAddRows = False
+        Me.dvAppts.AllowUserToDeleteRows = False
+        Me.dvAppts.AutoGenerateColumns = False
         Me.dvAppts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvAppts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApptidDataGridViewTextBoxColumn, Me.ApptdateDataGridViewTextBoxColumn, Me.ApptaddressDataGridViewTextBoxColumn})
+        Me.dvAppts.DataSource = Me.AppointmentBindingSource
         Me.dvAppts.Location = New System.Drawing.Point(12, 12)
         Me.dvAppts.Name = "dvAppts"
+        Me.dvAppts.ReadOnly = True
         Me.dvAppts.Size = New System.Drawing.Size(545, 271)
         Me.dvAppts.TabIndex = 8
         '
@@ -75,6 +90,41 @@ Partial Class FormAppts
         Me.btnAddAppt.Text = "Add"
         Me.btnAddAppt.UseVisualStyleBackColor = True
         '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AppointmentBindingSource
+        '
+        Me.AppointmentBindingSource.DataMember = "Appointment"
+        Me.AppointmentBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'AppointmentTableAdapter
+        '
+        Me.AppointmentTableAdapter.ClearBeforeFill = True
+        '
+        'ApptidDataGridViewTextBoxColumn
+        '
+        Me.ApptidDataGridViewTextBoxColumn.DataPropertyName = "appt_id"
+        Me.ApptidDataGridViewTextBoxColumn.HeaderText = "appt_id"
+        Me.ApptidDataGridViewTextBoxColumn.Name = "ApptidDataGridViewTextBoxColumn"
+        Me.ApptidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ApptdateDataGridViewTextBoxColumn
+        '
+        Me.ApptdateDataGridViewTextBoxColumn.DataPropertyName = "appt_date"
+        Me.ApptdateDataGridViewTextBoxColumn.HeaderText = "appt_date"
+        Me.ApptdateDataGridViewTextBoxColumn.Name = "ApptdateDataGridViewTextBoxColumn"
+        Me.ApptdateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ApptaddressDataGridViewTextBoxColumn
+        '
+        Me.ApptaddressDataGridViewTextBoxColumn.DataPropertyName = "appt_address"
+        Me.ApptaddressDataGridViewTextBoxColumn.HeaderText = "appt_address"
+        Me.ApptaddressDataGridViewTextBoxColumn.Name = "ApptaddressDataGridViewTextBoxColumn"
+        Me.ApptaddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'FormAppts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -88,6 +138,8 @@ Partial Class FormAppts
         Me.Name = "FormAppts"
         Me.Text = "FormAppts"
         CType(Me.dvAppts, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AppointmentBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -96,4 +148,10 @@ Partial Class FormAppts
     Friend WithEvents btnDelAppt As Button
     Friend WithEvents btnEditAppt As Button
     Friend WithEvents btnAddAppt As Button
+    Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
+    Friend WithEvents AppointmentBindingSource As BindingSource
+    Friend WithEvents AppointmentTableAdapter As TeamProjectDataSetTableAdapters.AppointmentTableAdapter
+    Friend WithEvents ApptidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApptdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApptaddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

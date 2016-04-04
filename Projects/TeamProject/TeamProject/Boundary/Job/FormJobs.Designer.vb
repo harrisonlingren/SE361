@@ -22,12 +22,22 @@ Partial Class FormJobs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnSaveJob = New System.Windows.Forms.Button()
         Me.btnDelJob = New System.Windows.Forms.Button()
         Me.btnEditJob = New System.Windows.Forms.Button()
         Me.btnAddJob = New System.Windows.Forms.Button()
         Me.dvJob = New System.Windows.Forms.DataGridView()
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.JobBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JobTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.JobTableAdapter()
+        Me.JobidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JobdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JobaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JobcostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvJob, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveJob
@@ -69,11 +79,59 @@ Partial Class FormJobs
         '
         'dvJob
         '
+        Me.dvJob.AllowUserToAddRows = False
+        Me.dvJob.AllowUserToDeleteRows = False
+        Me.dvJob.AutoGenerateColumns = False
         Me.dvJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvJob.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.JobidDataGridViewTextBoxColumn, Me.JobdateDataGridViewTextBoxColumn, Me.JobaddressDataGridViewTextBoxColumn, Me.JobcostDataGridViewTextBoxColumn})
+        Me.dvJob.DataSource = Me.JobBindingSource
         Me.dvJob.Location = New System.Drawing.Point(12, 12)
         Me.dvJob.Name = "dvJob"
+        Me.dvJob.ReadOnly = True
         Me.dvJob.Size = New System.Drawing.Size(545, 271)
         Me.dvJob.TabIndex = 7
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'JobBindingSource
+        '
+        Me.JobBindingSource.DataMember = "Job"
+        Me.JobBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'JobTableAdapter
+        '
+        Me.JobTableAdapter.ClearBeforeFill = True
+        '
+        'JobidDataGridViewTextBoxColumn
+        '
+        Me.JobidDataGridViewTextBoxColumn.DataPropertyName = "job_id"
+        Me.JobidDataGridViewTextBoxColumn.HeaderText = "job_id"
+        Me.JobidDataGridViewTextBoxColumn.Name = "JobidDataGridViewTextBoxColumn"
+        Me.JobidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JobdateDataGridViewTextBoxColumn
+        '
+        Me.JobdateDataGridViewTextBoxColumn.DataPropertyName = "job_date"
+        Me.JobdateDataGridViewTextBoxColumn.HeaderText = "job_date"
+        Me.JobdateDataGridViewTextBoxColumn.Name = "JobdateDataGridViewTextBoxColumn"
+        Me.JobdateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JobaddressDataGridViewTextBoxColumn
+        '
+        Me.JobaddressDataGridViewTextBoxColumn.DataPropertyName = "job_address"
+        Me.JobaddressDataGridViewTextBoxColumn.HeaderText = "job_address"
+        Me.JobaddressDataGridViewTextBoxColumn.Name = "JobaddressDataGridViewTextBoxColumn"
+        Me.JobaddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JobcostDataGridViewTextBoxColumn
+        '
+        Me.JobcostDataGridViewTextBoxColumn.DataPropertyName = "job_cost"
+        Me.JobcostDataGridViewTextBoxColumn.HeaderText = "job_cost"
+        Me.JobcostDataGridViewTextBoxColumn.Name = "JobcostDataGridViewTextBoxColumn"
+        Me.JobcostDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormJobs
         '
@@ -88,6 +146,8 @@ Partial Class FormJobs
         Me.Name = "FormJobs"
         Me.Text = "FormJobs"
         CType(Me.dvJob, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,4 +157,11 @@ Partial Class FormJobs
     Friend WithEvents btnEditJob As Button
     Friend WithEvents btnAddJob As Button
     Friend WithEvents dvJob As DataGridView
+    Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
+    Friend WithEvents JobBindingSource As BindingSource
+    Friend WithEvents JobTableAdapter As TeamProjectDataSetTableAdapters.JobTableAdapter
+    Friend WithEvents JobidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JobdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JobaddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JobcostDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

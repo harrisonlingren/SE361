@@ -14,4 +14,9 @@
         FormEditEmployee.loadEmployee(selectedIndex)
     End Sub
 
+    Private Sub FormEmployees_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'TeamProjectDataSet.Employee' table. You can move, or remove it, as needed.
+        Me.EmployeeTableAdapter.Fill(Me.TeamProjectDataSet.Employee)
+
+    End Sub
 End Class

@@ -22,12 +22,25 @@ Partial Class FormEmployees
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnSaveEmp = New System.Windows.Forms.Button()
         Me.btnDelEmp = New System.Windows.Forms.Button()
         Me.btnEditEmp = New System.Windows.Forms.Button()
         Me.btnAddEmp = New System.Windows.Forms.Button()
         Me.dvEmp = New System.Windows.Forms.DataGridView()
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.EmployeeTableAdapter()
+        Me.EmpidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmptypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmpphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmphoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmppayrateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvEmp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveEmp
@@ -69,11 +82,80 @@ Partial Class FormEmployees
         '
         'dvEmp
         '
+        Me.dvEmp.AllowUserToAddRows = False
+        Me.dvEmp.AllowUserToDeleteRows = False
+        Me.dvEmp.AutoGenerateColumns = False
         Me.dvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EmpidDataGridViewTextBoxColumn, Me.EmpnameDataGridViewTextBoxColumn, Me.EmptypeDataGridViewTextBoxColumn, Me.EmpaddrDataGridViewTextBoxColumn, Me.EmpphoneDataGridViewTextBoxColumn, Me.EmphoursDataGridViewTextBoxColumn, Me.EmppayrateDataGridViewTextBoxColumn})
+        Me.dvEmp.DataSource = Me.EmployeeBindingSource
         Me.dvEmp.Location = New System.Drawing.Point(12, 12)
         Me.dvEmp.Name = "dvEmp"
+        Me.dvEmp.ReadOnly = True
         Me.dvEmp.Size = New System.Drawing.Size(545, 271)
         Me.dvEmp.TabIndex = 8
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'EmpidDataGridViewTextBoxColumn
+        '
+        Me.EmpidDataGridViewTextBoxColumn.DataPropertyName = "emp_id"
+        Me.EmpidDataGridViewTextBoxColumn.HeaderText = "emp_id"
+        Me.EmpidDataGridViewTextBoxColumn.Name = "EmpidDataGridViewTextBoxColumn"
+        Me.EmpidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmpnameDataGridViewTextBoxColumn
+        '
+        Me.EmpnameDataGridViewTextBoxColumn.DataPropertyName = "emp_name"
+        Me.EmpnameDataGridViewTextBoxColumn.HeaderText = "emp_name"
+        Me.EmpnameDataGridViewTextBoxColumn.Name = "EmpnameDataGridViewTextBoxColumn"
+        Me.EmpnameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmptypeDataGridViewTextBoxColumn
+        '
+        Me.EmptypeDataGridViewTextBoxColumn.DataPropertyName = "emp_type"
+        Me.EmptypeDataGridViewTextBoxColumn.HeaderText = "emp_type"
+        Me.EmptypeDataGridViewTextBoxColumn.Name = "EmptypeDataGridViewTextBoxColumn"
+        Me.EmptypeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmpaddrDataGridViewTextBoxColumn
+        '
+        Me.EmpaddrDataGridViewTextBoxColumn.DataPropertyName = "emp_addr"
+        Me.EmpaddrDataGridViewTextBoxColumn.HeaderText = "emp_addr"
+        Me.EmpaddrDataGridViewTextBoxColumn.Name = "EmpaddrDataGridViewTextBoxColumn"
+        Me.EmpaddrDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmpphoneDataGridViewTextBoxColumn
+        '
+        Me.EmpphoneDataGridViewTextBoxColumn.DataPropertyName = "emp_phone"
+        Me.EmpphoneDataGridViewTextBoxColumn.HeaderText = "emp_phone"
+        Me.EmpphoneDataGridViewTextBoxColumn.Name = "EmpphoneDataGridViewTextBoxColumn"
+        Me.EmpphoneDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmphoursDataGridViewTextBoxColumn
+        '
+        Me.EmphoursDataGridViewTextBoxColumn.DataPropertyName = "emp_hours"
+        Me.EmphoursDataGridViewTextBoxColumn.HeaderText = "emp_hours"
+        Me.EmphoursDataGridViewTextBoxColumn.Name = "EmphoursDataGridViewTextBoxColumn"
+        Me.EmphoursDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmppayrateDataGridViewTextBoxColumn
+        '
+        Me.EmppayrateDataGridViewTextBoxColumn.DataPropertyName = "emp_pay_rate"
+        Me.EmppayrateDataGridViewTextBoxColumn.HeaderText = "emp_pay_rate"
+        Me.EmppayrateDataGridViewTextBoxColumn.Name = "EmppayrateDataGridViewTextBoxColumn"
+        Me.EmppayrateDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormEmployees
         '
@@ -88,6 +170,8 @@ Partial Class FormEmployees
         Me.Name = "FormEmployees"
         Me.Text = "FormEmployees"
         CType(Me.dvEmp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,4 +181,14 @@ Partial Class FormEmployees
     Friend WithEvents btnEditEmp As Button
     Friend WithEvents btnAddEmp As Button
     Friend WithEvents dvEmp As DataGridView
+    Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
+    Friend WithEvents EmployeeBindingSource As BindingSource
+    Friend WithEvents EmployeeTableAdapter As TeamProjectDataSetTableAdapters.EmployeeTableAdapter
+    Friend WithEvents EmpidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmpnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmptypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmpaddrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmpphoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmphoursDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmppayrateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

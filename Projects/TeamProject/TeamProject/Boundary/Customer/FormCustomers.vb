@@ -15,6 +15,8 @@ Public Class FormCustomers
     End Sub
 
     Private Sub FormCustomers_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'TeamProjectDataSet.Customer' table. You can move, or remove it, as needed.
+        Me.CustomerTableAdapter.Fill(Me.TeamProjectDataSet.Customer)
         loadDataCust()
     End Sub
 

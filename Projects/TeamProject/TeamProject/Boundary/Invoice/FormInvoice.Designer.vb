@@ -22,12 +22,22 @@ Partial Class FormInvoice
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnSaveInv = New System.Windows.Forms.Button()
         Me.btnDelInv = New System.Windows.Forms.Button()
         Me.btnEditInv = New System.Windows.Forms.Button()
         Me.btnAddInv = New System.Windows.Forms.Button()
         Me.dvInv = New System.Windows.Forms.DataGridView()
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.InvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.InvoiceTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.InvoiceTableAdapter()
+        Me.InvoiceidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoicedateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoicecostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceduedateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveInv
@@ -69,11 +79,59 @@ Partial Class FormInvoice
         '
         'dvInv
         '
+        Me.dvInv.AllowUserToAddRows = False
+        Me.dvInv.AllowUserToDeleteRows = False
+        Me.dvInv.AutoGenerateColumns = False
         Me.dvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvInv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InvoiceidDataGridViewTextBoxColumn, Me.InvoicedateDataGridViewTextBoxColumn, Me.InvoicecostDataGridViewTextBoxColumn, Me.InvoiceduedateDataGridViewTextBoxColumn})
+        Me.dvInv.DataSource = Me.InvoiceBindingSource
         Me.dvInv.Location = New System.Drawing.Point(12, 12)
         Me.dvInv.Name = "dvInv"
+        Me.dvInv.ReadOnly = True
         Me.dvInv.Size = New System.Drawing.Size(545, 271)
         Me.dvInv.TabIndex = 8
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'InvoiceBindingSource
+        '
+        Me.InvoiceBindingSource.DataMember = "Invoice"
+        Me.InvoiceBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'InvoiceTableAdapter
+        '
+        Me.InvoiceTableAdapter.ClearBeforeFill = True
+        '
+        'InvoiceidDataGridViewTextBoxColumn
+        '
+        Me.InvoiceidDataGridViewTextBoxColumn.DataPropertyName = "invoice_id"
+        Me.InvoiceidDataGridViewTextBoxColumn.HeaderText = "invoice_id"
+        Me.InvoiceidDataGridViewTextBoxColumn.Name = "InvoiceidDataGridViewTextBoxColumn"
+        Me.InvoiceidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'InvoicedateDataGridViewTextBoxColumn
+        '
+        Me.InvoicedateDataGridViewTextBoxColumn.DataPropertyName = "invoice_date"
+        Me.InvoicedateDataGridViewTextBoxColumn.HeaderText = "invoice_date"
+        Me.InvoicedateDataGridViewTextBoxColumn.Name = "InvoicedateDataGridViewTextBoxColumn"
+        Me.InvoicedateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'InvoicecostDataGridViewTextBoxColumn
+        '
+        Me.InvoicecostDataGridViewTextBoxColumn.DataPropertyName = "invoice_cost"
+        Me.InvoicecostDataGridViewTextBoxColumn.HeaderText = "invoice_cost"
+        Me.InvoicecostDataGridViewTextBoxColumn.Name = "InvoicecostDataGridViewTextBoxColumn"
+        Me.InvoicecostDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'InvoiceduedateDataGridViewTextBoxColumn
+        '
+        Me.InvoiceduedateDataGridViewTextBoxColumn.DataPropertyName = "invoice_due_date"
+        Me.InvoiceduedateDataGridViewTextBoxColumn.HeaderText = "invoice_due_date"
+        Me.InvoiceduedateDataGridViewTextBoxColumn.Name = "InvoiceduedateDataGridViewTextBoxColumn"
+        Me.InvoiceduedateDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormInvoice
         '
@@ -88,6 +146,8 @@ Partial Class FormInvoice
         Me.Name = "FormInvoice"
         Me.Text = "FormInvoice"
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -97,4 +157,11 @@ Partial Class FormInvoice
     Friend WithEvents btnEditInv As Button
     Friend WithEvents btnAddInv As Button
     Friend WithEvents dvInv As DataGridView
+    Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
+    Friend WithEvents InvoiceBindingSource As BindingSource
+    Friend WithEvents InvoiceTableAdapter As TeamProjectDataSetTableAdapters.InvoiceTableAdapter
+    Friend WithEvents InvoiceidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoicedateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoicecostDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceduedateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
