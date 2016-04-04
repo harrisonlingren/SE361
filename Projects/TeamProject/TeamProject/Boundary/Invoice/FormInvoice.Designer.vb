@@ -20,56 +20,81 @@ Partial Class FormInvoice
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnDelInvoice = New System.Windows.Forms.Button()
-        Me.btnEditInvoice = New System.Windows.Forms.Button()
-        Me.btnAddInvoice = New System.Windows.Forms.Button()
+        Me.btnSaveInv = New System.Windows.Forms.Button()
+        Me.btnDelInv = New System.Windows.Forms.Button()
+        Me.btnEditInv = New System.Windows.Forms.Button()
+        Me.btnAddInv = New System.Windows.Forms.Button()
+        Me.dvInv = New System.Windows.Forms.DataGridView()
+        CType(Me.dvInv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnDelInvoice
+        'btnSaveInv
         '
-        Me.btnDelInvoice.Enabled = False
-        Me.btnDelInvoice.Location = New System.Drawing.Point(345, 289)
-        Me.btnDelInvoice.Name = "btnDelInvoice"
-        Me.btnDelInvoice.Size = New System.Drawing.Size(110, 23)
-        Me.btnDelInvoice.TabIndex = 6
-        Me.btnDelInvoice.Text = "Delete"
-        Me.btnDelInvoice.UseVisualStyleBackColor = True
+        Me.btnSaveInv.Location = New System.Drawing.Point(447, 289)
+        Me.btnSaveInv.Name = "btnSaveInv"
+        Me.btnSaveInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnSaveInv.TabIndex = 5
+        Me.btnSaveInv.Text = "Save and Close"
+        Me.btnSaveInv.UseVisualStyleBackColor = True
         '
-        'btnEditInvoice
+        'btnDelInv
         '
-        Me.btnEditInvoice.Enabled = False
-        Me.btnEditInvoice.Location = New System.Drawing.Point(229, 289)
-        Me.btnEditInvoice.Name = "btnEditInvoice"
-        Me.btnEditInvoice.Size = New System.Drawing.Size(110, 23)
-        Me.btnEditInvoice.TabIndex = 5
-        Me.btnEditInvoice.Text = "Edit"
-        Me.btnEditInvoice.UseVisualStyleBackColor = True
+        Me.btnDelInv.Location = New System.Drawing.Point(244, 289)
+        Me.btnDelInv.Name = "btnDelInv"
+        Me.btnDelInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnDelInv.TabIndex = 6
+        Me.btnDelInv.Text = "Delete"
+        Me.btnDelInv.UseVisualStyleBackColor = True
         '
-        'btnAddInvoice
+        'btnEditInv
         '
-        Me.btnAddInvoice.Location = New System.Drawing.Point(113, 289)
-        Me.btnAddInvoice.Name = "btnAddInvoice"
-        Me.btnAddInvoice.Size = New System.Drawing.Size(110, 23)
-        Me.btnAddInvoice.TabIndex = 4
-        Me.btnAddInvoice.Text = "Add"
-        Me.btnAddInvoice.UseVisualStyleBackColor = True
+        Me.btnEditInv.Enabled = False
+        Me.btnEditInv.Location = New System.Drawing.Point(128, 289)
+        Me.btnEditInv.Name = "btnEditInv"
+        Me.btnEditInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnEditInv.TabIndex = 4
+        Me.btnEditInv.Text = "Edit"
+        Me.btnEditInv.UseVisualStyleBackColor = True
+        '
+        'btnAddInv
+        '
+        Me.btnAddInv.Location = New System.Drawing.Point(12, 289)
+        Me.btnAddInv.Name = "btnAddInv"
+        Me.btnAddInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnAddInv.TabIndex = 3
+        Me.btnAddInv.Text = "Add"
+        Me.btnAddInv.UseVisualStyleBackColor = True
+        '
+        'dvInv
+        '
+        Me.dvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvInv.Location = New System.Drawing.Point(12, 12)
+        Me.dvInv.Name = "dvInv"
+        Me.dvInv.Size = New System.Drawing.Size(545, 271)
+        Me.dvInv.TabIndex = 8
         '
         'FormInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(569, 324)
-        Me.Controls.Add(Me.btnDelInvoice)
-        Me.Controls.Add(Me.btnEditInvoice)
-        Me.Controls.Add(Me.btnAddInvoice)
+        Me.Controls.Add(Me.dvInv)
+        Me.Controls.Add(Me.btnSaveInv)
+        Me.Controls.Add(Me.btnDelInv)
+        Me.Controls.Add(Me.btnEditInv)
+        Me.Controls.Add(Me.btnAddInv)
         Me.Name = "FormInvoice"
         Me.Text = "FormInvoice"
+        CType(Me.dvInv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents btnDelInvoice As Button
-    Friend WithEvents btnEditInvoice As Button
-    Friend WithEvents btnAddInvoice As Button
+
+    Private WithEvents btnSaveInv As Button
+    Friend WithEvents btnDelInv As Button
+    Friend WithEvents btnEditInv As Button
+    Friend WithEvents btnAddInv As Button
+    Friend WithEvents dvInv As DataGridView
 End Class

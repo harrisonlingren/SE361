@@ -2,11 +2,11 @@
 
     Private selectedIndex As Integer
 
-    Private Sub btnAddJob_Click(sender As Object, e As EventArgs) Handles btnAddJob.Click
+    Private Sub btnAddJob_Click(sender As Object, e As EventArgs) 
         FormEditJob.Show()
     End Sub
 
-    Private Sub btnEditJob_Click(sender As Object, e As EventArgs) Handles btnEditJob.Click
+    Private Sub btnEditJob_Click(sender As Object, e As EventArgs) 
         FormEditJob.loadJob(selectedIndex)
     End Sub
 

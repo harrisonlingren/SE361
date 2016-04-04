@@ -26,6 +26,8 @@ Partial Class FormCustomers
         Me.btnEditCust = New System.Windows.Forms.Button()
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnSaveCust = New System.Windows.Forms.Button()
+        Me.dvCust = New System.Windows.Forms.DataGridView()
+        CType(Me.dvCust, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAddCust
@@ -65,17 +67,27 @@ Partial Class FormCustomers
         Me.btnSaveCust.Text = "Save and Close"
         Me.btnSaveCust.UseVisualStyleBackColor = True
         '
+        'dvCust
+        '
+        Me.dvCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvCust.Location = New System.Drawing.Point(12, 12)
+        Me.dvCust.Name = "dvCust"
+        Me.dvCust.Size = New System.Drawing.Size(545, 271)
+        Me.dvCust.TabIndex = 8
+        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(569, 324)
+        Me.Controls.Add(Me.dvCust)
         Me.Controls.Add(Me.btnSaveCust)
         Me.Controls.Add(Me.btnDelCust)
         Me.Controls.Add(Me.btnEditCust)
         Me.Controls.Add(Me.btnAddCust)
         Me.Name = "FormCustomers"
         Me.Text = "FormCustomers"
+        CType(Me.dvCust, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -84,4 +96,5 @@ Partial Class FormCustomers
     Friend WithEvents btnEditCust As Button
     Friend WithEvents btnDelCust As Button
     Private WithEvents btnSaveCust As System.Windows.Forms.Button
+    Friend WithEvents dvCust As DataGridView
 End Class
