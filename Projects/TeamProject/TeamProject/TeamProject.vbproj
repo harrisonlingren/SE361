@@ -170,6 +170,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TeamProjectDataSet.vb">
+      <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Boundary\Appointment\FormAppts.resx">

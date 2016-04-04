@@ -28,17 +28,17 @@ Partial Class FormCustomers
         Me.btnDelCust = New System.Windows.Forms.Button()
         Me.btnSaveCust = New System.Windows.Forms.Button()
         Me.dvCust = New System.Windows.Forms.DataGridView()
-        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
-        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CustomerTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.CustomerTableAdapter()
         Me.CustidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustemailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.CustomerTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.CustomerTableAdapter()
         CType(Me.dvCust, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAddCust
@@ -75,7 +75,7 @@ Partial Class FormCustomers
         Me.btnSaveCust.Name = "btnSaveCust"
         Me.btnSaveCust.Size = New System.Drawing.Size(110, 23)
         Me.btnSaveCust.TabIndex = 2
-        Me.btnSaveCust.Text = "Save and Close"
+        Me.btnSaveCust.Text = "Close"
         Me.btnSaveCust.UseVisualStyleBackColor = True
         '
         'dvCust
@@ -91,20 +91,6 @@ Partial Class FormCustomers
         Me.dvCust.ReadOnly = True
         Me.dvCust.Size = New System.Drawing.Size(545, 271)
         Me.dvCust.TabIndex = 8
-        '
-        'TeamProjectDataSet
-        '
-        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
-        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CustomerBindingSource
-        '
-        Me.CustomerBindingSource.DataMember = "Customer"
-        Me.CustomerBindingSource.DataSource = Me.TeamProjectDataSet
-        '
-        'CustomerTableAdapter
-        '
-        Me.CustomerTableAdapter.ClearBeforeFill = True
         '
         'CustidDataGridViewTextBoxColumn
         '
@@ -141,6 +127,20 @@ Partial Class FormCustomers
         Me.CustemailDataGridViewTextBoxColumn.Name = "CustemailDataGridViewTextBoxColumn"
         Me.CustemailDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'CustomerBindingSource
+        '
+        Me.CustomerBindingSource.DataMember = "Customer"
+        Me.CustomerBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
         'FormCustomers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -154,8 +154,8 @@ Partial Class FormCustomers
         Me.Name = "FormCustomers"
         Me.Text = "FormCustomers"
         CType(Me.dvCust, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

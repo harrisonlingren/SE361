@@ -1,28 +1,61 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Public Class FormEditCustomer
+    Private newID As Integer
+    Public formType As Integer
 
-Public Class FormEditCustomer
     Private Sub btnCustCancel_Click(sender As Object, e As EventArgs) Handles btnCustCancel.Click
         Me.Close()
     End Sub
 
     Private Sub btnCustSave_Click(sender As Object, e As EventArgs) Handles btnCustSave.Click
 
-        Dim cust1 As New cCustomer
+        'Check if adding new customer or editing current customer
+        If formType = 0 Then
+            Dim tempCust As New cCustomer
 
-        MessageBox.Show(FormMain.runDBquery("select count(cust_id) from Customers"))
-        Dim itemcount As Integer = CInt(FormMain.runDBquery("select count(cust_id) from Customers"))
+            tempCust.id = newID
+            tempCust.name = CType(txtCustName.Text, String)
+            tempCust.phone = CType(txtCustPhone.Text, String)
+            tempCust.email = CType(txtCustEmail.Text, String)
+            tempCust.address = CType(txtCustAddress.Text, String)
 
-        cust1.id = CInt(itemCount)
-        cust1.name = txtCustName.Text
-        cust1.email = txtCustEmail.Text
-        cust1.phone = txtCustPhone.Text
-        cust1.address = txtCustAddress.Text
+            Dim testQ As Integer = FormCustomers.CustomerTableAdapter.InsertQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email)
+            MessageBox.Show("Rows affected: " & testQ)
 
-        Dim addQuery As String
-        addQuery = "insert into Customers (cust_id, cust_name, cust_address, cust_phone, cust_email) values " & cust1.id & "," & cust1.name & "," & cust1.address & "," & cust1.phone & "," & cust1.email
+        ElseIf formType = 1 Then
+            Dim tempCust As New cCustomer
 
-        MessageBox.Show(FormMain.runDBquery(addQuery))
+            tempCust.id = CType(txtCustID.Text, Integer)
+            tempCust.name = CType(txtCustName.Text, String)
+            tempCust.phone = CType(txtCustPhone.Text, String)
+            tempCust.email = CType(txtCustEmail.Text, String)
+            tempCust.address = CType(txtCustAddress.Text, String)
+
+            Dim testQ As Integer = FormCustomers.CustomerTableAdapter.UpdateQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email, tempCust.id)
+            MessageBox.Show("Rows affected: " & testQ)
+        End If
+
+        FormCustomers.Refresh()
+        FormCustomers.reloadData()
         Me.Close()
+
+    End Sub
+
+    Private Sub FormEditCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If formType = 0 Then
+            'check if adding new customer, update with new id
+            newID = CType(FormCustomers.CustomerTableAdapter.GetCustID.Last.cust_id, Integer) + 1
+            Console.WriteLine("New customer ID: " & newID)
+            txtCustID.Text = CStr(newID)
+
+        ElseIf formType = 1 Then
+            'if editing customer, load values to textboxes
+
+            txtCustID.Text = FormCustomers.dvCust.CurrentRow.Cells(0).Value
+            txtCustName.Text = FormCustomers.dvCust.CurrentRow.Cells(1).Value
+            txtCustPhone.Text = FormCustomers.dvCust.CurrentRow.Cells(3).Value
+            txtCustAddress.Text = FormCustomers.dvCust.CurrentRow.Cells(2).Value
+            txtCustEmail.Text = FormCustomers.dvCust.CurrentRow.Cells(4).Value
+        End If
 
     End Sub
 End Class
