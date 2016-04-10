@@ -165,13 +165,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TeamProjectDataSet.Designer.vb">
+    <Compile Include="Data\TeamProjectDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="TeamProjectDataSet.vb">
+    <Compile Include="Data\TeamProjectDataSet.vb">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -229,16 +229,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="TeamProjectDataSet.xsc">
+    <None Include="Data\TeamProjectDataSet.xsc">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="TeamProjectDataSet.xsd">
+    <None Include="Data\TeamProjectDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LastGenOutput>TeamProjectDataSet1.Designer.vb</LastGenOutput>
     </None>
-    <None Include="TeamProjectDataSet.xss">
+    <None Include="Data\TeamProjectDataSet.xss">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -247,7 +248,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TeamProject.mdb">
+    <Content Include="Data\TeamProject.mdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

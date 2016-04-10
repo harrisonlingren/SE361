@@ -126,7 +126,7 @@
               <Mapping SourceColumn="cust_email" DataSetColumn="cust_email" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountQuery" Modifier="Public" Name="CountQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CountQuery">
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountQuery" Modifier="Public" Name="CountQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CountQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM Customer</CommandText>
@@ -134,7 +134,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="delQuery" Modifier="Public" Name="delQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="delQuery">
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="delQuery" Modifier="Public" Name="delQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="delQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM `Customer` WHERE `cust_id` = ?</CommandText>
@@ -153,7 +153,7 @@ FROM            Customer</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO `Customer` (`cust_name`, `cust_addr`, `cust_phone`, `cust_email`) VALUES (?, ?, ?, ?)</CommandText>
@@ -261,7 +261,40 @@ FROM            Customer</CommandText>
               <Mapping SourceColumn="emp_hours" DataSetColumn="emp_hours" />
               <Mapping SourceColumn="emp_pay_rate" DataSetColumn="emp_pay_rate" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CountQuery" Modifier="Public" Name="CountQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CountQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM Employee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="Employee" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetEmpID" Modifier="Public" Name="GetEmpID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetEmpID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        emp_id
+FROM            Employee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="TeamProjectConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO `Employee` (`emp_name`, `emp_type`, `emp_addr`, `emp_phone`, `emp_hours`, `emp_pay_rate`) VALUES (?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="emp_name" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_name" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_name" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="emp_type" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_type" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="emp_addr" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_addr" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_addr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="emp_phone" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_phone" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_phone" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param5" ColumnName="emp_hours" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_hours" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_hours" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="emp_pay_rate" DataSourceName="Employee" DataTypeServer="DbType.StringFixedLength(255)" DbType="String" Direction="Input" ParameterName="emp_pay_rate" Precision="0" ProviderType="WChar" Scale="0" Size="255" SourceColumn="emp_pay_rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InvoiceTableAdapter" GeneratorDataComponentClassName="InvoiceTableAdapter" Name="Invoice" UserDataComponentName="InvoiceTableAdapter">
             <MainSource>
@@ -387,7 +420,7 @@ FROM            Customer</CommandText>
   <xs:element name="TeamProjectDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TeamProjectDataSet" msprop:Generator_UserDSName="TeamProjectDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Appointment" msprop:Generator_TableClassName="AppointmentDataTable" msprop:Generator_TableVarName="tableAppointment" msprop:Generator_RowChangedName="AppointmentRowChanged" msprop:Generator_TablePropName="Appointment" msprop:Generator_RowDeletingName="AppointmentRowDeleting" msprop:Generator_RowChangingName="AppointmentRowChanging" msprop:Generator_RowEvHandlerName="AppointmentRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentRowDeleted" msprop:Generator_RowClassName="AppointmentRow" msprop:Generator_UserTableName="Appointment" msprop:Generator_RowEvArgName="AppointmentRowChangeEvent">
+        <xs:element name="Appointment" msprop:Generator_TableClassName="AppointmentDataTable" msprop:Generator_TableVarName="tableAppointment" msprop:Generator_TablePropName="Appointment" msprop:Generator_RowDeletingName="AppointmentRowDeleting" msprop:Generator_RowChangingName="AppointmentRowChanging" msprop:Generator_RowEvHandlerName="AppointmentRowChangeEventHandler" msprop:Generator_RowDeletedName="AppointmentRowDeleted" msprop:Generator_UserTableName="Appointment" msprop:Generator_RowChangedName="AppointmentRowChanged" msprop:Generator_RowEvArgName="AppointmentRowChangeEvent" msprop:Generator_RowClassName="AppointmentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="appt_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnappt_id" msprop:Generator_ColumnPropNameInRow="appt_id" msprop:Generator_ColumnPropNameInTable="appt_idColumn" msprop:Generator_UserColumnName="appt_id" type="xs:int" />
@@ -408,7 +441,7 @@ FROM            Customer</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_RowClassName="CustomerRow" msprop:Generator_UserTableName="Customer" msprop:Generator_RowEvArgName="CustomerRowChangeEvent">
+        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_UserTableName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_RowClassName="CustomerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cust_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncust_id" msprop:Generator_ColumnPropNameInRow="cust_id" msprop:Generator_ColumnPropNameInTable="cust_idColumn" msprop:Generator_UserColumnName="cust_id" type="xs:int" />
@@ -443,7 +476,7 @@ FROM            Customer</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_RowClassName="EmployeeRow" msprop:Generator_UserTableName="Employee" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent">
+        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_UserTableName="Employee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent" msprop:Generator_RowClassName="EmployeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="emp_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnemp_id" msprop:Generator_ColumnPropNameInRow="emp_id" msprop:Generator_ColumnPropNameInTable="emp_idColumn" msprop:Generator_UserColumnName="emp_id" type="xs:int" />
@@ -492,7 +525,7 @@ FROM            Customer</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Invoice" msprop:Generator_TableClassName="InvoiceDataTable" msprop:Generator_TableVarName="tableInvoice" msprop:Generator_RowChangedName="InvoiceRowChanged" msprop:Generator_TablePropName="Invoice" msprop:Generator_RowDeletingName="InvoiceRowDeleting" msprop:Generator_RowChangingName="InvoiceRowChanging" msprop:Generator_RowEvHandlerName="InvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceRowDeleted" msprop:Generator_RowClassName="InvoiceRow" msprop:Generator_UserTableName="Invoice" msprop:Generator_RowEvArgName="InvoiceRowChangeEvent">
+        <xs:element name="Invoice" msprop:Generator_TableClassName="InvoiceDataTable" msprop:Generator_TableVarName="tableInvoice" msprop:Generator_TablePropName="Invoice" msprop:Generator_RowDeletingName="InvoiceRowDeleting" msprop:Generator_RowChangingName="InvoiceRowChanging" msprop:Generator_RowEvHandlerName="InvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoiceRowDeleted" msprop:Generator_UserTableName="Invoice" msprop:Generator_RowChangedName="InvoiceRowChanged" msprop:Generator_RowEvArgName="InvoiceRowChangeEvent" msprop:Generator_RowClassName="InvoiceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="invoice_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columninvoice_id" msprop:Generator_ColumnPropNameInRow="invoice_id" msprop:Generator_ColumnPropNameInTable="invoice_idColumn" msprop:Generator_UserColumnName="invoice_id" type="xs:int" />
@@ -514,7 +547,7 @@ FROM            Customer</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Job" msprop:Generator_TableClassName="JobDataTable" msprop:Generator_TableVarName="tableJob" msprop:Generator_RowChangedName="JobRowChanged" msprop:Generator_TablePropName="Job" msprop:Generator_RowDeletingName="JobRowDeleting" msprop:Generator_RowChangingName="JobRowChanging" msprop:Generator_RowEvHandlerName="JobRowChangeEventHandler" msprop:Generator_RowDeletedName="JobRowDeleted" msprop:Generator_RowClassName="JobRow" msprop:Generator_UserTableName="Job" msprop:Generator_RowEvArgName="JobRowChangeEvent">
+        <xs:element name="Job" msprop:Generator_TableClassName="JobDataTable" msprop:Generator_TableVarName="tableJob" msprop:Generator_TablePropName="Job" msprop:Generator_RowDeletingName="JobRowDeleting" msprop:Generator_RowChangingName="JobRowChanging" msprop:Generator_RowEvHandlerName="JobRowChangeEventHandler" msprop:Generator_RowDeletedName="JobRowDeleted" msprop:Generator_UserTableName="Job" msprop:Generator_RowChangedName="JobRowChanged" msprop:Generator_RowEvArgName="JobRowChangeEvent" msprop:Generator_RowClassName="JobRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="job_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnjob_id" msprop:Generator_ColumnPropNameInRow="job_id" msprop:Generator_ColumnPropNameInTable="job_idColumn" msprop:Generator_UserColumnName="job_id" type="xs:int" />
