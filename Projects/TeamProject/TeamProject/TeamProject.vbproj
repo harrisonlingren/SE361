@@ -78,6 +78,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\TeamProjectDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entity\cAppointment.vb" />
     <Compile Include="Entity\cCustomer.vb" />
     <Compile Include="Entity\cEmployee.vb" />
@@ -164,12 +169,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Data\TeamProjectDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Data\TeamProjectDataSet.vb">
       <DependentUpon>TeamProjectDataSet.xsd</DependentUpon>

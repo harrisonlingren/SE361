@@ -24,7 +24,6 @@ Public Class FormCustomers
         Dim custName As String = CType(dvCust.CurrentRow.Cells(1).Value, String)
         Console.WriteLine(custName & " to be deleted.")
         Dim resp = MessageBox.Show("Are you sure you want to delete '" & custName & "'?", "Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-        'CustomerTableAdapter.delQuery(selectedIndex)
 
         If resp = DialogResult.Yes Then
             Dim data As DataGridViewCellCollection = dvCust.Rows(selectedIndex).Cells
@@ -46,7 +45,7 @@ Public Class FormCustomers
         Try
             selectedIndex = CType(dvCust.CurrentRow.Index, Integer)
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            Console.WriteLine("Error: " & ex.Message)
             selectedIndex -= 1
         End Try
         Console.WriteLine("Row selected: " & selectedIndex)

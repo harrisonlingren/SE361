@@ -1,43 +1,72 @@
 ﻿Public Class FormEditEmployee
+    Private newID As Integer
+    Public formType As Integer
+
     Private Sub btnCustCancel_Click(sender As Object, e As EventArgs) Handles btnEmpCancel.Click
         Me.Close()
     End Sub
 
+    Friend Shared Sub loadEmployee(selectedIndex As Integer)
+
+    End Sub
+
     Private Sub btnEmpSave_Click(sender As Object, e As EventArgs) Handles btnEmpSave.Click
 
-        Dim emp1 As New cEmployee
+        'Check if adding new customer or editing current customer
+        If formType = 0 Then
+            Dim tempEmp As New cEmployee
 
-        'emp1.id = CInt(FormEmployees.listViewEmp.Items.Count)
-        emp1.type = comboEmpType.Text
-        emp1.name = txtEmpName.Text
-        emp1.address = txtEmpAddress.Text
-        emp1.phone = txtEmpPhone.Text
-        emp1.hours = txtEmpHours.Text
-        emp1.payRate = txtEmpPayRate.Text
+            tempEmp.id = newID
+            tempEmp.name = CType(txtEmpName.Text, String)
+            tempEmp.phone = CType(txtEmpPhone.Text, String)
+            tempEmp.hours = CType(txtEmpHours.Text, String)
+            tempEmp.address = CType(txtEmpAddress.Text, String)
+            tempEmp.payRate = CType(txtEmpPayRate.Text, Double)
+            tempEmp.type = CType(comboEmpType.SelectedText, String)
 
-        'FormEmployees.listViewEmp.Items.Add(emp1.id)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.type)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.name)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.address)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.phone)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.hours)
-        'FormEmployees.listViewEmp.Items(FormEmployees.listViewEmp.Items.Count - 1).SubItems.Add(emp1.payRate)
+            Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.Insert(tempEmp.name, tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate)
+            MessageBox.Show("Rows affected: " & testQ)
 
+        ElseIf formType = 1 Then
+            Dim tempEmp As New cEmployee
+
+            tempEmp.id = CType(txtEmpID.Text, Integer)
+            tempEmp.name = CType(txtEmpName.Text, String)
+            tempEmp.phone = CType(txtEmpPhone.Text, String)
+            tempEmp.hours = CType(txtEmpHours.Text, String)
+            tempEmp.address = CType(txtEmpAddress.Text, String)
+            tempEmp.payRate = CType(txtEmpPayRate.Text, Double)
+            tempEmp.type = CType(comboEmpType.Text, String)
+
+            Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.UpdateQuery(tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate, tempEmp.name, tempEmp.id)
+            MessageBox.Show("Rows affected: " & testQ)
+        End If
+
+        FormCustomers.Refresh()
+        FormCustomers.reloadData()
         Me.Close()
 
     End Sub
 
-    Public Sub loadEmployee(selectedIndex As Integer)
+    Private Sub FormEditEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        'txtEmpID.Text = FormEmployees.listViewEmp.Items(selectedIndex).Text
-        'comboEmpType.SelectedIndex = comboEmpType.FindStringExact(FormEmployees.listViewEmp.Items(selectedIndex).SubItems(1).Text)
-        'txtEmpName.Text = FormEmployees.listViewEmp.Items(selectedIndex).SubItems(2).Text
-        'txtEmpAddress.Text = FormEmployees.listViewEmp.Items(selectedIndex).SubItems(3).Text
-        'txtEmpPhone.Text = FormEmployees.listViewEmp.Items(selectedIndex).SubItems(4).Text
-        'txtEmpHours.Text = FormEmployees.listViewEmp.Items(selectedIndex).SubItems(5).Text
-        'txtEmpPayRate.Text = FormEmployees.listViewEmp.Items(selectedIndex).SubItems(6).Text
+        If formType = 0 Then
+            'check if adding new customer, update with new id
+            newID = CType(FormEmployees.EmployeeTableAdapter.GetEmpIDs.Last.emp_id, Integer) + 1
+            Console.WriteLine("New employee ID: " & newID)
+            txtEmpID.Text = CStr(newID)
 
-        Me.Show()
+        ElseIf formType = 1 Then
+            'if editing customer, load values to textboxes
+
+            txtEmpID.Text = FormEmployees.dvEmp.CurrentRow.Cells(0).Value
+            txtEmpName.Text = FormEmployees.dvEmp.CurrentRow.Cells(1).Value
+            comboEmpType.Text = FormEmployees.dvEmp.CurrentRow.Cells(2).Value
+            txtEmpAddress.Text = FormEmployees.dvEmp.CurrentRow.Cells(3).Value
+            txtEmpPhone.Text = FormEmployees.dvEmp.CurrentRow.Cells(4).Value
+            txtEmpHours.Text = FormEmployees.dvEmp.CurrentRow.Cells(5).Value
+            txtEmpPayRate.Text = FormEmployees.dvEmp.CurrentRow.Cells(6).Value
+        End If
 
     End Sub
 End Class
