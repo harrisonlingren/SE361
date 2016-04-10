@@ -95,34 +95,34 @@
     <Compile Include="Boundary\Customer\FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\Appointment\FormEditAppt.Designer.vb">
+    <Compile Include="Control\Appointment\FormEditAppt.Designer.vb">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\Appointment\FormEditAppt.vb">
+    <Compile Include="Control\Appointment\FormEditAppt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\Customer\FormEditCustomer.Designer.vb">
+    <Compile Include="Control\Customer\FormEditCustomer.Designer.vb">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\Customer\FormEditCustomer.vb">
+    <Compile Include="Control\Customer\FormEditCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\Employee\FormEditEmployee.Designer.vb">
+    <Compile Include="Control\Employee\FormEditEmployee.Designer.vb">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\Employee\FormEditEmployee.vb">
+    <Compile Include="Control\Employee\FormEditEmployee.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\Invoice\FormEditInvoice.Designer.vb">
+    <Compile Include="Control\Invoice\FormEditInvoice.Designer.vb">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\Invoice\FormEditInvoice.vb">
+    <Compile Include="Control\Invoice\FormEditInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\Job\FormEditJob.Designer.vb">
+    <Compile Include="Control\Job\FormEditJob.Designer.vb">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\Job\FormEditJob.vb">
+    <Compile Include="Control\Job\FormEditJob.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Boundary\Employee\FormEmployees.Designer.vb">
@@ -183,19 +183,19 @@
     <EmbeddedResource Include="Boundary\Customer\FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\Appointment\FormEditAppt.resx">
+    <EmbeddedResource Include="Control\Appointment\FormEditAppt.resx">
       <DependentUpon>FormEditAppt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\Customer\FormEditCustomer.resx">
+    <EmbeddedResource Include="Control\Customer\FormEditCustomer.resx">
       <DependentUpon>FormEditCustomer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\Employee\FormEditEmployee.resx">
+    <EmbeddedResource Include="Control\Employee\FormEditEmployee.resx">
       <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\Invoice\FormEditInvoice.resx">
+    <EmbeddedResource Include="Control\Invoice\FormEditInvoice.resx">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\Job\FormEditJob.resx">
+    <EmbeddedResource Include="Control\Job\FormEditJob.resx">
       <DependentUpon>FormEditJob.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\Employee\FormEmployees.resx">
@@ -235,7 +235,6 @@
     </None>
     <None Include="TeamProjectDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TeamProjectDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -252,6 +251,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
