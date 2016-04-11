@@ -7,8 +7,9 @@ Public Class FormCustomers
     Public selectedIndex As Integer
 
     Private Sub btnAddCust_Click(sender As Object, e As EventArgs) Handles btnAddCust.Click
-        FormEditCustomer.formType = 0
-        FormEditCustomer.Show()
+        FormObjectEditor.formType = 0
+        FormObjectEditor.globalIndex = 1
+        FormObjectEditor.Show()
     End Sub
 
     Private Sub btnSaveCust_Click(sender As Object, e As EventArgs) Handles btnSaveCust.Click
