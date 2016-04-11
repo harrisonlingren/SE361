@@ -34,8 +34,9 @@ Public Class FormCustomers
     End Sub
 
     Private Sub btnEditCust_Click(sender As Object, e As EventArgs) Handles btnEditCust.Click
-        FormEditCustomer.formType = 1
-        FormEditCustomer.Show()
+        FormObjectEditor.formType = 1
+        FormObjectEditor.globalIndex = 1
+        FormObjectEditor.Show()
     End Sub
 
     Public Sub reloadData()

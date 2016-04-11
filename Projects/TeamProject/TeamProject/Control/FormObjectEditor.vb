@@ -1,6 +1,7 @@
 ﻿Public Class FormObjectEditor
     Public formType As Integer
     Public globalIndex As Integer
+    Private newID As Integer
 
     Private Sub FormObjectEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'TeamProjectDataSet.Job' table. You can move, or remove it, as needed.
@@ -10,6 +11,34 @@
 
         comboType.SelectedIndex = globalIndex
         reloadOptions()
+        loadValues(globalIndex)
+    End Sub
+
+    Private Sub loadValues(i As Integer)
+        Select Case i
+            Case 0
+            Case 1
+                If formType = 0 Then
+                    'check if adding new customer, update with new id
+                    newID = CType(FormCustomers.CustomerTableAdapter.GetCustID.Last.cust_id, Integer) + 1
+                    Console.WriteLine("New customer ID: " & newID)
+                    txtID.Text = CStr(newID)
+
+                ElseIf formType = 1 Then
+                    'if editing customer, load values to textboxes
+
+                    txtID.Text = FormCustomers.dvCust.CurrentRow.Cells(0).Value
+                    txtName.Text = FormCustomers.dvCust.CurrentRow.Cells(1).Value
+                    txtPhone.Text = FormCustomers.dvCust.CurrentRow.Cells(3).Value
+                    txtAddress.Text = FormCustomers.dvCust.CurrentRow.Cells(2).Value
+                    txtEmail.Text = FormCustomers.dvCust.CurrentRow.Cells(4).Value
+                End If
+            Case 2
+            Case 3
+            Case 4
+        End Select
+
+
     End Sub
 
     Private Sub comboObjType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboObjType.SelectedIndexChanged
@@ -102,7 +131,35 @@
             Case 0
 
             Case 1
+                'Check if adding new customer or editing current customer
+                If formType = 0 Then
+                    Dim tempCust As New cCustomer
 
+                    tempCust.id = newID
+                    tempCust.name = CType(txtName.Text, String)
+                    tempCust.phone = CType(txtPhone.Text, String)
+                    tempCust.email = CType(txtEmail.Text, String)
+                    tempCust.address = CType(txtAddress.Text, String)
+
+                    Dim testQ As Integer = FormCustomers.CustomerTableAdapter.InsertQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email)
+                    MessageBox.Show("Rows affected: " & testQ)
+
+                ElseIf formType = 1 Then
+                    Dim tempCust As New cCustomer
+
+                    tempCust.id = CType(txtID.Text, Integer)
+                    tempCust.name = CType(txtName.Text, String)
+                    tempCust.phone = CType(txtPhone.Text, String)
+                    tempCust.email = CType(txtEmail.Text, String)
+                    tempCust.address = CType(txtAddress.Text, String)
+
+                    Dim testQ As Integer = FormCustomers.CustomerTableAdapter.UpdateQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email, tempCust.id)
+                    MessageBox.Show("Rows affected: " & testQ)
+                End If
+
+                FormCustomers.Refresh()
+                FormCustomers.reloadData()
+                Me.Close()
             Case 2
 
             Case 3
@@ -111,4 +168,5 @@
 
         End Select
     End Sub
+
 End Class
