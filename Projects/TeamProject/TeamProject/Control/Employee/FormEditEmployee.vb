@@ -22,7 +22,7 @@
             tempEmp.hours = CType(txtEmpHours.Text, String)
             tempEmp.address = CType(txtEmpAddress.Text, String)
             tempEmp.payRate = CType(txtEmpPayRate.Text, Double)
-            tempEmp.type = CType(comboEmpType.SelectedText, String)
+            tempEmp.type = CType(comboEmpType.Text, String)
 
             Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.Insert(tempEmp.name, tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate)
             MessageBox.Show("Rows affected: " & testQ)
