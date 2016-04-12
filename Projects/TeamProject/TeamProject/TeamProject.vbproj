@@ -106,18 +106,6 @@
     <Compile Include="Boundary\Customer\FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Appointment\FormEditAppt.Designer.vb">
-      <DependentUpon>FormEditAppt.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Appointment\FormEditAppt.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Employee\FormEditEmployee.Designer.vb">
-      <DependentUpon>FormEditEmployee.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Employee\FormEditEmployee.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Control\Invoice\FormEditInvoice.Designer.vb">
       <DependentUpon>FormEditInvoice.vb</DependentUpon>
     </Compile>
@@ -181,12 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\Customer\FormCustomers.resx">
       <DependentUpon>FormCustomers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Appointment\FormEditAppt.resx">
-      <DependentUpon>FormEditAppt.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Employee\FormEditEmployee.resx">
-      <DependentUpon>FormEditEmployee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FormObjectEditor.resx">
       <DependentUpon>FormObjectEditor.vb</DependentUpon>

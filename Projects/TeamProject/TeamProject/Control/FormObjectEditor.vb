@@ -4,9 +4,7 @@
     Private newID As Integer
 
     Private Sub FormObjectEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'TeamProjectDataSet.Job' table. You can move, or remove it, as needed.
         Me.JobTableAdapter.Fill(Me.TeamProjectDataSet.Job)
-        'TODO: This line of code loads data into the 'TeamProjectDataSet.Customer' table. You can move, or remove it, as needed.
         Me.CustomerTableAdapter.Fill(Me.TeamProjectDataSet.Customer)
 
         comboType.SelectedIndex = globalIndex
@@ -17,6 +15,24 @@
     Private Sub loadValues(i As Integer)
         Select Case i
             Case 0
+                If formType = 0 Then
+                    'check if adding new appointment, update with new id
+                    Try
+                        newID = CType(FormAppts.AppointmentTableAdapter.GetApptID.Last.appt_id, Integer) + 1
+                    Catch ex As Exception
+                        newID = 0
+                    End Try
+                    'newID = CType(FormAppts.AppointmentTableAdapter.GetApptID.Last.appt_id, Integer) + 1
+                    Console.WriteLine("New appointment ID: " & newID)
+                    txtID.Text = CStr(newID)
+
+                ElseIf formType = 1 Then
+                    'if editing appointment, load values to textboxes
+                    txtID.Text = FormAppts.dvAppts.CurrentRow.Cells(0).Value
+                    dtDate.Text = FormAppts.dvAppts.CurrentRow.Cells(1).Value
+                    txtAddress.Text = FormAppts.dvAppts.CurrentRow.Cells(2).Value
+                End If
+
             Case 1
                 If formType = 0 Then
                     'check if adding new customer, update with new id
@@ -33,6 +49,7 @@
                     txtAddress.Text = FormCustomers.dvCust.CurrentRow.Cells(2).Value
                     txtEmail.Text = FormCustomers.dvCust.CurrentRow.Cells(4).Value
                 End If
+
             Case 2
                 If formType = 0 Then
                     'check if adding new customer, update with new id
@@ -51,7 +68,10 @@
                     txtHours.Text = FormEmployees.dvEmp.CurrentRow.Cells(5).Value
                     txtPayRate.Text = FormEmployees.dvEmp.CurrentRow.Cells(6).Value
                 End If
+
             Case 3
+
+
             Case 4
         End Select
 
@@ -146,7 +166,31 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Select Case globalIndex
             Case 0
+                'Check if adding new appointment or editing current appointment
+                If formType = 0 Then
+                    Dim tempAppt As New cAppointment
 
+                    tempAppt.id = newID
+                    tempAppt.address = CType(txtAddress.Text, String)
+                    tempAppt.datetime = CType(dtDate.Value, Date)
+
+                    Dim testQ As Integer = FormAppts.AppointmentTableAdapter.Insert(tempAppt.datetime, tempAppt.address)
+                    MessageBox.Show("Rows affected: " & testQ)
+
+                ElseIf formType = 1 Then
+                    Dim tempAppt As New cAppointment
+
+                    tempAppt.id = CType(txtID.Text, Integer)
+                    tempAppt.address = CType(txtAddress.Text, String)
+                    tempAppt.datetime = CType(dtDate.Value, Date)
+
+                    Dim testQ As Integer = FormAppts.AppointmentTableAdapter.UpdateQuery(tempAppt.datetime, tempAppt.address, tempAppt.id)
+                    MessageBox.Show("Rows affected: " & testQ)
+                End If
+
+                FormAppts.Refresh()
+                FormAppts.reloadData()
+                Me.Close()
             Case 1
                 'Check if adding new customer or editing current customer
                 If formType = 0 Then
@@ -178,7 +222,7 @@
                 FormCustomers.reloadData()
                 Me.Close()
             Case 2
-                'Check if adding new customer or editing current customer
+                'Check if adding new employee or editing current employee
                 If formType = 0 Then
                     Dim tempEmp As New cEmployee
 

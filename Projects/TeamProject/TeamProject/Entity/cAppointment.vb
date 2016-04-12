@@ -1,12 +1,12 @@
 ﻿Public Class cAppointment
 
     Private apptID As Integer
-    Private apptDate As String
+    Private apptDate As Date
     Private apptAddr As String
 
     Public Sub New()
         apptID = 0
-        apptDate = String.Empty
+        apptDate = Date.Now
         apptAddr = String.Empty
     End Sub
 
