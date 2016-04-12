@@ -13,13 +13,15 @@
     End Sub
 
     Private Sub btnAddEmp_Click(sender As Object, e As EventArgs) Handles btnAddEmp.Click
-        FormEditCustomer.formType = 0
-        FormEditEmployee.Show()
+        FormObjectEditor.formType = 0
+        FormObjectEditor.globalIndex = 2
+        FormObjectEditor.Show()
     End Sub
 
     Private Sub btnEditEmp_Click(sender As Object, e As EventArgs) Handles btnEditEmp.Click
-        FormEditEmployee.formType = 1
-        FormEditEmployee.Show()
+        FormObjectEditor.formType = 1
+        FormObjectEditor.globalIndex = 2
+        FormObjectEditor.Show()
     End Sub
 
     Private Sub btnDelEmp_Click(sender As Object, e As EventArgs) Handles btnDelEmp.Click
@@ -34,7 +36,7 @@
         Me.reloadData()
     End Sub
 
-    Private Sub reloadData()
+    Public Sub reloadData()
         Me.EmployeeTableAdapter.Fill(Me.TeamProjectDataSet.Employee)
     End Sub
 

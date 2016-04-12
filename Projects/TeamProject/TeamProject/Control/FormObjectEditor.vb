@@ -34,6 +34,23 @@
                     txtEmail.Text = FormCustomers.dvCust.CurrentRow.Cells(4).Value
                 End If
             Case 2
+                If formType = 0 Then
+                    'check if adding new customer, update with new id
+                    newID = CType(FormEmployees.EmployeeTableAdapter.GetEmpIDs.Last.emp_id, Integer) + 1
+                    Console.WriteLine("New employee ID: " & newID)
+                    txtID.Text = CStr(newID)
+
+                ElseIf formType = 1 Then
+                    'if editing customer, load values to textboxes
+
+                    txtID.Text = FormEmployees.dvEmp.CurrentRow.Cells(0).Value
+                    txtName.Text = FormEmployees.dvEmp.CurrentRow.Cells(1).Value
+                    comboType.Text = FormEmployees.dvEmp.CurrentRow.Cells(2).Value
+                    txtAddress.Text = FormEmployees.dvEmp.CurrentRow.Cells(3).Value
+                    txtPhone.Text = FormEmployees.dvEmp.CurrentRow.Cells(4).Value
+                    txtHours.Text = FormEmployees.dvEmp.CurrentRow.Cells(5).Value
+                    txtPayRate.Text = FormEmployees.dvEmp.CurrentRow.Cells(6).Value
+                End If
             Case 3
             Case 4
         End Select
@@ -161,7 +178,39 @@
                 FormCustomers.reloadData()
                 Me.Close()
             Case 2
+                'Check if adding new customer or editing current customer
+                If formType = 0 Then
+                    Dim tempEmp As New cEmployee
 
+                    tempEmp.id = newID
+                    tempEmp.name = CType(txtName.Text, String)
+                    tempEmp.phone = CType(txtPhone.Text, String)
+                    tempEmp.hours = CType(txtHours.Text, String)
+                    tempEmp.address = CType(txtAddress.Text, String)
+                    tempEmp.payRate = CType(txtPayRate.Text, Double)
+                    tempEmp.type = CType(comboType.Text, String)
+
+                    Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.Insert(tempEmp.name, tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate)
+                    MessageBox.Show("Rows affected: " & testQ)
+
+                ElseIf formType = 1 Then
+                    Dim tempEmp As New cEmployee
+
+                    tempEmp.id = CType(txtID.Text, Integer)
+                    tempEmp.name = CType(txtName.Text, String)
+                    tempEmp.phone = CType(txtPhone.Text, String)
+                    tempEmp.hours = CType(txtHours.Text, String)
+                    tempEmp.address = CType(txtAddress.Text, String)
+                    tempEmp.payRate = CType(txtPayRate.Text, Double)
+                    tempEmp.type = CType(comboType.Text, String)
+
+                    Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.UpdateQuery(tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate, tempEmp.name, tempEmp.id)
+                    MessageBox.Show("Rows affected: " & testQ)
+                End If
+
+                FormEmployees.Refresh()
+                FormEmployees.reloadData()
+                Me.Close()
             Case 3
 
             Case 4
