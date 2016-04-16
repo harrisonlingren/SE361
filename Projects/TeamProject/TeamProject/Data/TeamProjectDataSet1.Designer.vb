@@ -525,7 +525,7 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddAppointmentRow(ByVal appt_date As Date, ByVal appt_address As String) As AppointmentRow
+        Public Overloads Function AddAppointmentRow(ByVal appt_date As String, ByVal appt_address As String) As AppointmentRow
             Dim rowAppointmentRow As AppointmentRow = CType(Me.NewRow,AppointmentRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, appt_date, appt_address}
             rowAppointmentRow.ItemArray = columnValuesArray
@@ -566,7 +566,7 @@ Partial Public Class TeamProjectDataSet
         Private Sub InitClass()
             Me.columnappt_id = New Global.System.Data.DataColumn("appt_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnappt_id)
-            Me.columnappt_date = New Global.System.Data.DataColumn("appt_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnappt_date = New Global.System.Data.DataColumn("appt_date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnappt_date)
             Me.columnappt_address = New Global.System.Data.DataColumn("appt_address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnappt_address)
@@ -2013,10 +2013,10 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property appt_date() As Date
+        Public Property appt_date() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableAppointment.appt_dateColumn),Date)
+                    Return CType(Me(Me.tableAppointment.appt_dateColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'appt_date' in table 'Appointment' is DBNull.", e)
                 End Try

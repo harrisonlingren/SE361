@@ -7,7 +7,7 @@
         Me.JobTableAdapter.Fill(Me.TeamProjectDataSet.Job)
         Me.CustomerTableAdapter.Fill(Me.TeamProjectDataSet.Customer)
 
-        comboType.SelectedIndex = globalIndex
+        comboObjType.SelectedIndex = globalIndex
         reloadOptions()
         loadValues(globalIndex)
     End Sub
@@ -100,6 +100,7 @@
                 comboType.Enabled = False
                 dtDate.Enabled = True
                 comboObjType.Text = "Appointment"
+                dtDueDate.Enabled = False
             Case 1
                 'Customer
                 txtName.Enabled = True
@@ -114,6 +115,7 @@
                 comboType.Enabled = False
                 dtDate.Enabled = False
                 comboObjType.Text = "Customer"
+                dtDueDate.Enabled = False
             Case 2
                 'Employee
                 txtName.Enabled = True
@@ -128,6 +130,7 @@
                 comboType.Enabled = True
                 dtDate.Enabled = False
                 comboObjType.Text = "Employee"
+                dtDueDate.Enabled = False
             Case 3
                 'Invoice
                 txtName.Enabled = False
@@ -142,6 +145,7 @@
                 comboType.Enabled = False
                 dtDate.Enabled = True
                 comboObjType.Text = "Invoice"
+                dtDueDate.Enabled = True
             Case 4
                 'Job
                 txtName.Enabled = False
@@ -156,6 +160,7 @@
                 comboType.Enabled = False
                 dtDate.Enabled = True
                 comboObjType.Text = "Job"
+                dtDueDate.Enabled = False
         End Select
     End Sub
 
@@ -167,25 +172,21 @@
         Select Case globalIndex
             Case 0
                 'Check if adding new appointment or editing current appointment
+
+                Dim tempAppt As New cAppointment
+                tempAppt.address = CType(txtAddress.Text, String)
+                tempAppt.datetime = CType(dtDate.Value, Date)
+
                 If formType = 0 Then
-                    Dim tempAppt As New cAppointment
-
                     tempAppt.id = newID
-                    tempAppt.address = CType(txtAddress.Text, String)
-                    tempAppt.datetime = CType(dtDate.Value, Date)
-
                     Dim testQ As Integer = FormAppts.AppointmentTableAdapter.Insert(tempAppt.datetime, tempAppt.address)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
 
                 ElseIf formType = 1 Then
-                    Dim tempAppt As New cAppointment
-
                     tempAppt.id = CType(txtID.Text, Integer)
-                    tempAppt.address = CType(txtAddress.Text, String)
-                    tempAppt.datetime = CType(dtDate.Value, Date)
-
                     Dim testQ As Integer = FormAppts.AppointmentTableAdapter.UpdateQuery(tempAppt.datetime, tempAppt.address, tempAppt.id)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
+
                 End If
 
                 FormAppts.Refresh()
@@ -193,29 +194,22 @@
                 Me.Close()
             Case 1
                 'Check if adding new customer or editing current customer
+
+                Dim tempCust As New cCustomer
+                tempCust.name = CType(txtName.Text, String)
+                tempCust.phone = CType(txtPhone.Text, String)
+                tempCust.email = CType(txtEmail.Text, String)
+                tempCust.address = CType(txtAddress.Text, String)
+
                 If formType = 0 Then
-                    Dim tempCust As New cCustomer
-
                     tempCust.id = newID
-                    tempCust.name = CType(txtName.Text, String)
-                    tempCust.phone = CType(txtPhone.Text, String)
-                    tempCust.email = CType(txtEmail.Text, String)
-                    tempCust.address = CType(txtAddress.Text, String)
-
                     Dim testQ As Integer = FormCustomers.CustomerTableAdapter.InsertQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
 
                 ElseIf formType = 1 Then
-                    Dim tempCust As New cCustomer
-
                     tempCust.id = CType(txtID.Text, Integer)
-                    tempCust.name = CType(txtName.Text, String)
-                    tempCust.phone = CType(txtPhone.Text, String)
-                    tempCust.email = CType(txtEmail.Text, String)
-                    tempCust.address = CType(txtAddress.Text, String)
-
                     Dim testQ As Integer = FormCustomers.CustomerTableAdapter.UpdateQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email, tempCust.id)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
                 End If
 
                 FormCustomers.Refresh()
@@ -223,33 +217,24 @@
                 Me.Close()
             Case 2
                 'Check if adding new employee or editing current employee
+
+                Dim tempEmp As New cEmployee
+                tempEmp.name = CType(txtName.Text, String)
+                tempEmp.phone = CType(txtPhone.Text, String)
+                tempEmp.hours = CType(txtHours.Text, String)
+                tempEmp.address = CType(txtAddress.Text, String)
+                tempEmp.payRate = CType(txtPayRate.Text, Double)
+                tempEmp.type = CType(comboType.Text, String)
+
                 If formType = 0 Then
-                    Dim tempEmp As New cEmployee
-
                     tempEmp.id = newID
-                    tempEmp.name = CType(txtName.Text, String)
-                    tempEmp.phone = CType(txtPhone.Text, String)
-                    tempEmp.hours = CType(txtHours.Text, String)
-                    tempEmp.address = CType(txtAddress.Text, String)
-                    tempEmp.payRate = CType(txtPayRate.Text, Double)
-                    tempEmp.type = CType(comboType.Text, String)
-
                     Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.Insert(tempEmp.name, tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
 
                 ElseIf formType = 1 Then
-                    Dim tempEmp As New cEmployee
-
                     tempEmp.id = CType(txtID.Text, Integer)
-                    tempEmp.name = CType(txtName.Text, String)
-                    tempEmp.phone = CType(txtPhone.Text, String)
-                    tempEmp.hours = CType(txtHours.Text, String)
-                    tempEmp.address = CType(txtAddress.Text, String)
-                    tempEmp.payRate = CType(txtPayRate.Text, Double)
-                    tempEmp.type = CType(comboType.Text, String)
-
                     Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.UpdateQuery(tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate, tempEmp.name, tempEmp.id)
-                    MessageBox.Show("Rows affected: " & testQ)
+                    'MessageBox.Show("Rows affected: " & testQ)
                 End If
 
                 FormEmployees.Refresh()

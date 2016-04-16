@@ -57,6 +57,8 @@ Partial Class FormObjectEditor
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CustomerTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.CustomerTableAdapter()
         Me.JobTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.JobTableAdapter()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtDueDate = New System.Windows.Forms.DateTimePicker()
         Me.gbProperties.SuspendLayout()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,6 +187,7 @@ Partial Class FormObjectEditor
         Me.gbProperties.Controls.Add(Me.comboJobs)
         Me.gbProperties.Controls.Add(Me.comboCustomers)
         Me.gbProperties.Controls.Add(Me.comboType)
+        Me.gbProperties.Controls.Add(Me.dtDueDate)
         Me.gbProperties.Controls.Add(Me.dtDate)
         Me.gbProperties.Controls.Add(Me.Label10)
         Me.gbProperties.Controls.Add(Me.Label2)
@@ -198,6 +201,7 @@ Partial Class FormObjectEditor
         Me.gbProperties.Controls.Add(Me.txtAmount)
         Me.gbProperties.Controls.Add(Me.txtEmail)
         Me.gbProperties.Controls.Add(Me.Label13)
+        Me.gbProperties.Controls.Add(Me.Label1)
         Me.gbProperties.Controls.Add(Me.Label12)
         Me.gbProperties.Controls.Add(Me.Label4)
         Me.gbProperties.Controls.Add(Me.txtPayRate)
@@ -356,6 +360,22 @@ Partial Class FormObjectEditor
         '
         Me.JobTableAdapter.ClearBeforeFill = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(248, 155)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 13)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Due Date:"
+        '
+        'dtDueDate
+        '
+        Me.dtDueDate.Location = New System.Drawing.Point(311, 152)
+        Me.dtDueDate.Name = "dtDueDate"
+        Me.dtDueDate.Size = New System.Drawing.Size(146, 20)
+        Me.dtDueDate.TabIndex = 22
+        '
         'FormObjectEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -414,4 +434,6 @@ Partial Class FormObjectEditor
     Friend WithEvents CustomerTableAdapter As TeamProjectDataSetTableAdapters.CustomerTableAdapter
     Friend WithEvents JobBindingSource As BindingSource
     Friend WithEvents JobTableAdapter As TeamProjectDataSetTableAdapters.JobTableAdapter
+    Friend WithEvents dtDueDate As DateTimePicker
+    Friend WithEvents Label1 As Label
 End Class

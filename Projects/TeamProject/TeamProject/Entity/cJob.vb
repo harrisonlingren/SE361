@@ -1,7 +1,7 @@
 ﻿Public Class cJob
 
     Private jobID As Integer
-    Private jobDate As Date
+    Private jobDate As String
     Private jobAddress As String
     Private jobCost As Double
 
@@ -21,11 +21,11 @@
         End Set
     End Property
 
-    Public Property datetime As Date
+    Public Property datetime As String
         Get
             Return jobDate
         End Get
-        Set(value As Date)
+        Set(value As String)
             jobDate = value
         End Set
     End Property

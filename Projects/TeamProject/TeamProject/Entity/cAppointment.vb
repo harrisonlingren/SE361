@@ -1,7 +1,7 @@
 ﻿Public Class cAppointment
 
     Private apptID As Integer
-    Private apptDate As Date
+    Private apptDate As String
     Private apptAddr As String
 
     Public Sub New()

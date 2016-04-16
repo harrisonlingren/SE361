@@ -106,18 +106,6 @@
     <Compile Include="Boundary\Customer\FormCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Control\Invoice\FormEditInvoice.Designer.vb">
-      <DependentUpon>FormEditInvoice.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Invoice\FormEditInvoice.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Control\Job\FormEditJob.Designer.vb">
-      <DependentUpon>FormEditJob.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Control\Job\FormEditJob.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Boundary\Employee\FormEmployees.Designer.vb">
       <DependentUpon>FormEmployees.vb</DependentUpon>
     </Compile>
@@ -172,12 +160,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FormObjectEditor.resx">
       <DependentUpon>FormObjectEditor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Invoice\FormEditInvoice.resx">
-      <DependentUpon>FormEditInvoice.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\Job\FormEditJob.resx">
-      <DependentUpon>FormEditJob.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\Employee\FormEmployees.resx">
       <DependentUpon>FormEmployees.vb</DependentUpon>
