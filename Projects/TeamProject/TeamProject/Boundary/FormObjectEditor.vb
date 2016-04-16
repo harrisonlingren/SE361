@@ -2,6 +2,11 @@
     Public formType As Integer
     Public globalIndex As Integer
     Private newID As Integer
+    Private cm As New cCustomerManager
+    Private am As New cAppointmentManager
+    Private jm As New cJobManager
+    Private im As New cInvoiceManager
+    Private em As New cEmployeeManager
 
     Private Sub FormObjectEditor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.JobTableAdapter.Fill(Me.TeamProjectDataSet.Job)
@@ -171,79 +176,20 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Select Case globalIndex
             Case 0
-                'Check if adding new appointment or editing current appointment
-
-                Dim tempAppt As New cAppointment
-                tempAppt.address = CType(txtAddress.Text, String)
-                tempAppt.datetime = CType(dtDate.Value, Date)
-
-                If formType = 0 Then
-                    tempAppt.id = newID
-                    Dim testQ As Integer = FormAppts.AppointmentTableAdapter.Insert(tempAppt.datetime, tempAppt.address)
-                    'MessageBox.Show("Rows affected: " & testQ)
-
-                ElseIf formType = 1 Then
-                    tempAppt.id = CType(txtID.Text, Integer)
-                    Dim testQ As Integer = FormAppts.AppointmentTableAdapter.UpdateQuery(tempAppt.datetime, tempAppt.address, tempAppt.id)
-                    'MessageBox.Show("Rows affected: " & testQ)
-
-                End If
-
-                FormAppts.Refresh()
-                FormAppts.reloadData()
+                am.save(formType)
                 Me.Close()
             Case 1
-                'Check if adding new customer or editing current customer
-
-                Dim tempCust As New cCustomer
-                tempCust.name = CType(txtName.Text, String)
-                tempCust.phone = CType(txtPhone.Text, String)
-                tempCust.email = CType(txtEmail.Text, String)
-                tempCust.address = CType(txtAddress.Text, String)
-
-                If formType = 0 Then
-                    tempCust.id = newID
-                    Dim testQ As Integer = FormCustomers.CustomerTableAdapter.InsertQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email)
-                    'MessageBox.Show("Rows affected: " & testQ)
-
-                ElseIf formType = 1 Then
-                    tempCust.id = CType(txtID.Text, Integer)
-                    Dim testQ As Integer = FormCustomers.CustomerTableAdapter.UpdateQuery(tempCust.name, tempCust.address, tempCust.phone, tempCust.email, tempCust.id)
-                    'MessageBox.Show("Rows affected: " & testQ)
-                End If
-
-                FormCustomers.Refresh()
-                FormCustomers.reloadData()
+                cm.save(formType)
                 Me.Close()
             Case 2
-                'Check if adding new employee or editing current employee
-
-                Dim tempEmp As New cEmployee
-                tempEmp.name = CType(txtName.Text, String)
-                tempEmp.phone = CType(txtPhone.Text, String)
-                tempEmp.hours = CType(txtHours.Text, String)
-                tempEmp.address = CType(txtAddress.Text, String)
-                tempEmp.payRate = CType(txtPayRate.Text, Double)
-                tempEmp.type = CType(comboType.Text, String)
-
-                If formType = 0 Then
-                    tempEmp.id = newID
-                    Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.Insert(tempEmp.name, tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate)
-                    'MessageBox.Show("Rows affected: " & testQ)
-
-                ElseIf formType = 1 Then
-                    tempEmp.id = CType(txtID.Text, Integer)
-                    Dim testQ As Integer = FormEmployees.EmployeeTableAdapter.UpdateQuery(tempEmp.type, tempEmp.address, tempEmp.phone, tempEmp.hours, tempEmp.payRate, tempEmp.name, tempEmp.id)
-                    'MessageBox.Show("Rows affected: " & testQ)
-                End If
-
-                FormEmployees.Refresh()
-                FormEmployees.reloadData()
+                em.save(formType)
                 Me.Close()
             Case 3
-
+                im.save(formType)
+                Me.Close()
             Case 4
-
+                jm.save(formType)
+                Me.Close()
         End Select
     End Sub
 

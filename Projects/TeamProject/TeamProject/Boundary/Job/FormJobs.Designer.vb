@@ -28,16 +28,16 @@ Partial Class FormJobs
         Me.btnEditJob = New System.Windows.Forms.Button()
         Me.btnAddJob = New System.Windows.Forms.Button()
         Me.dvJob = New System.Windows.Forms.DataGridView()
-        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
-        Me.JobBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.JobTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.JobTableAdapter()
         Me.JobidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.JobdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.JobaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.JobcostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JobBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.JobTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.JobTableAdapter()
         CType(Me.dvJob, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveJob
@@ -91,20 +91,6 @@ Partial Class FormJobs
         Me.dvJob.Size = New System.Drawing.Size(545, 271)
         Me.dvJob.TabIndex = 7
         '
-        'TeamProjectDataSet
-        '
-        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
-        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'JobBindingSource
-        '
-        Me.JobBindingSource.DataMember = "Job"
-        Me.JobBindingSource.DataSource = Me.TeamProjectDataSet
-        '
-        'JobTableAdapter
-        '
-        Me.JobTableAdapter.ClearBeforeFill = True
-        '
         'JobidDataGridViewTextBoxColumn
         '
         Me.JobidDataGridViewTextBoxColumn.DataPropertyName = "job_id"
@@ -133,6 +119,20 @@ Partial Class FormJobs
         Me.JobcostDataGridViewTextBoxColumn.Name = "JobcostDataGridViewTextBoxColumn"
         Me.JobcostDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'JobBindingSource
+        '
+        Me.JobBindingSource.DataMember = "Job"
+        Me.JobBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'JobTableAdapter
+        '
+        Me.JobTableAdapter.ClearBeforeFill = True
+        '
         'FormJobs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,8 +146,8 @@ Partial Class FormJobs
         Me.Name = "FormJobs"
         Me.Text = "FormJobs"
         CType(Me.dvJob, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

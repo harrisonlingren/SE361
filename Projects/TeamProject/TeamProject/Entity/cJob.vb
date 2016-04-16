@@ -3,7 +3,7 @@
     Private jobID As Integer
     Private jobDate As String
     Private jobAddress As String
-    Private jobCost As Double
+    Private jobCost As Decimal
 
     Public Sub New()
         jobID = 0

@@ -672,7 +672,7 @@ WHERE        (emp_id = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="invoice_cost" msprop:Generator_ColumnVarNameInTable="columninvoice_cost" msprop:Generator_ColumnPropNameInRow="invoice_cost" msprop:Generator_ColumnPropNameInTable="invoice_costColumn" msprop:Generator_UserColumnName="invoice_cost" type="xs:int" minOccurs="0" />
+              <xs:element name="invoice_cost" msprop:Generator_ColumnVarNameInTable="columninvoice_cost" msprop:Generator_ColumnPropNameInRow="invoice_cost" msprop:Generator_ColumnPropNameInTable="invoice_costColumn" msprop:Generator_UserColumnName="invoice_cost" type="xs:decimal" minOccurs="0" />
               <xs:element name="invoice_due_date" msprop:Generator_ColumnVarNameInTable="columninvoice_due_date" msprop:Generator_ColumnPropNameInRow="invoice_due_date" msprop:Generator_ColumnPropNameInTable="invoice_due_dateColumn" msprop:Generator_UserColumnName="invoice_due_date" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -701,13 +701,7 @@ WHERE        (emp_id = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="job_cost" msprop:Generator_ColumnVarNameInTable="columnjob_cost" msprop:Generator_ColumnPropNameInRow="job_cost" msprop:Generator_ColumnPropNameInTable="job_costColumn" msprop:Generator_UserColumnName="job_cost" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="536870910" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="job_cost" msprop:Generator_ColumnVarNameInTable="columnjob_cost" msprop:Generator_ColumnPropNameInRow="job_cost" msprop:Generator_ColumnPropNameInTable="job_costColumn" msprop:Generator_UserColumnName="job_cost" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -24,4 +24,8 @@
     Private Sub btnSaveInv_Click(sender As Object, e As EventArgs) Handles btnSaveInv.Click
         Me.Close()
     End Sub
+
+    Private Sub btnDelInv_Click(sender As Object, e As EventArgs) Handles btnDelInv.Click
+
+    End Sub
 End Class

@@ -28,16 +28,16 @@ Partial Class FormInvoice
         Me.btnEditInv = New System.Windows.Forms.Button()
         Me.btnAddInv = New System.Windows.Forms.Button()
         Me.dvInv = New System.Windows.Forms.DataGridView()
-        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
-        Me.InvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.InvoiceTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.InvoiceTableAdapter()
         Me.InvoiceidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoicedateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoicecostDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceduedateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
+        Me.InvoiceTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.InvoiceTableAdapter()
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveInv
@@ -60,7 +60,6 @@ Partial Class FormInvoice
         '
         'btnEditInv
         '
-        Me.btnEditInv.Enabled = False
         Me.btnEditInv.Location = New System.Drawing.Point(128, 289)
         Me.btnEditInv.Name = "btnEditInv"
         Me.btnEditInv.Size = New System.Drawing.Size(110, 23)
@@ -91,20 +90,6 @@ Partial Class FormInvoice
         Me.dvInv.Size = New System.Drawing.Size(545, 271)
         Me.dvInv.TabIndex = 8
         '
-        'TeamProjectDataSet
-        '
-        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
-        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InvoiceBindingSource
-        '
-        Me.InvoiceBindingSource.DataMember = "Invoice"
-        Me.InvoiceBindingSource.DataSource = Me.TeamProjectDataSet
-        '
-        'InvoiceTableAdapter
-        '
-        Me.InvoiceTableAdapter.ClearBeforeFill = True
-        '
         'InvoiceidDataGridViewTextBoxColumn
         '
         Me.InvoiceidDataGridViewTextBoxColumn.DataPropertyName = "invoice_id"
@@ -133,6 +118,20 @@ Partial Class FormInvoice
         Me.InvoiceduedateDataGridViewTextBoxColumn.Name = "InvoiceduedateDataGridViewTextBoxColumn"
         Me.InvoiceduedateDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'InvoiceBindingSource
+        '
+        Me.InvoiceBindingSource.DataMember = "Invoice"
+        Me.InvoiceBindingSource.DataSource = Me.TeamProjectDataSet
+        '
+        'TeamProjectDataSet
+        '
+        Me.TeamProjectDataSet.DataSetName = "TeamProjectDataSet"
+        Me.TeamProjectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'InvoiceTableAdapter
+        '
+        Me.InvoiceTableAdapter.ClearBeforeFill = True
+        '
         'FormInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -146,8 +145,8 @@ Partial Class FormInvoice
         Me.Name = "FormInvoice"
         Me.Text = "FormInvoice"
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

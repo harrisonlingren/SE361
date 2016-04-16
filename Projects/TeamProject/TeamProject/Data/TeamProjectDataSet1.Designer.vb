@@ -1494,7 +1494,7 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddInvoiceRow(ByVal invoice_date As String, ByVal invoice_cost As Integer, ByVal invoice_due_date As String) As InvoiceRow
+        Public Overloads Function AddInvoiceRow(ByVal invoice_date As String, ByVal invoice_cost As Double, ByVal invoice_due_date As String) As InvoiceRow
             Dim rowInvoiceRow As InvoiceRow = CType(Me.NewRow,InvoiceRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, invoice_date, invoice_cost, invoice_due_date}
             rowInvoiceRow.ItemArray = columnValuesArray
@@ -1538,7 +1538,7 @@ Partial Public Class TeamProjectDataSet
             MyBase.Columns.Add(Me.columninvoice_id)
             Me.columninvoice_date = New Global.System.Data.DataColumn("invoice_date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninvoice_date)
-            Me.columninvoice_cost = New Global.System.Data.DataColumn("invoice_cost", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columninvoice_cost = New Global.System.Data.DataColumn("invoice_cost", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninvoice_cost)
             Me.columninvoice_due_date = New Global.System.Data.DataColumn("invoice_due_date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninvoice_due_date)
@@ -1799,7 +1799,7 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddJobRow(ByVal job_date As String, ByVal job_address As String, ByVal job_cost As String) As JobRow
+        Public Overloads Function AddJobRow(ByVal job_date As String, ByVal job_address As String, ByVal job_cost As Double) As JobRow
             Dim rowJobRow As JobRow = CType(Me.NewRow,JobRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, job_date, job_address, job_cost}
             rowJobRow.ItemArray = columnValuesArray
@@ -1845,7 +1845,7 @@ Partial Public Class TeamProjectDataSet
             MyBase.Columns.Add(Me.columnjob_date)
             Me.columnjob_address = New Global.System.Data.DataColumn("job_address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnjob_address)
-            Me.columnjob_cost = New Global.System.Data.DataColumn("job_cost", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnjob_cost = New Global.System.Data.DataColumn("job_cost", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnjob_cost)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnjob_id}, true))
             Me.columnjob_id.AutoIncrement = true
@@ -1855,7 +1855,6 @@ Partial Public Class TeamProjectDataSet
             Me.columnjob_id.Unique = true
             Me.columnjob_date.MaxLength = 255
             Me.columnjob_address.MaxLength = 255
-            Me.columnjob_cost.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2433,10 +2432,10 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property invoice_cost() As Integer
+        Public Property invoice_cost() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableInvoice.invoice_costColumn),Integer)
+                    Return CType(Me(Me.tableInvoice.invoice_costColumn),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'invoice_cost' in table 'Invoice' is DBNull.", e)
                 End Try
@@ -2556,10 +2555,10 @@ Partial Public Class TeamProjectDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property job_cost() As String
+        Public Property job_cost() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableJob.job_costColumn),String)
+                    Return CType(Me(Me.tableJob.job_costColumn),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'job_cost' in table 'Job' is DBNull.", e)
                 End Try

@@ -22,7 +22,11 @@
         reloadData()
     End Sub
 
-    Private Sub reloadData()
+    Public Sub reloadData()
         Me.JobTableAdapter.Fill(Me.TeamProjectDataSet.Job)
+    End Sub
+
+    Private Sub btnDelJob_Click(sender As Object, e As EventArgs) Handles btnDelJob.Click
+
     End Sub
 End Class
