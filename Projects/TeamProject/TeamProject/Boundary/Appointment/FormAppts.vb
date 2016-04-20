@@ -45,8 +45,10 @@
 
         If resp = DialogResult.Yes Then
             Dim data As DataGridViewCellCollection = dvAppts.Rows(selectedIndex).Cells
-            AppointmentTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value)
+            Dim am As New cAppointmentManager
+            am.delete(data)
         End If
+
         Me.reloadData()
     End Sub
 

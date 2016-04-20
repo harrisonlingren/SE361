@@ -25,4 +25,9 @@
         FormEmployees.Refresh()
         FormEmployees.reloadData()
     End Sub
+
+    Sub delete(data As DataGridViewCellCollection)
+        FormEmployees.EmployeeTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value, data(3).Value, data(4).Value, data(5).Value, data(6).Value)
+    End Sub
+
 End Class

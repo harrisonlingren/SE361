@@ -47,7 +47,6 @@
 
                 ElseIf formType = 1 Then
                     'if editing customer, load values to textboxes
-
                     txtID.Text = FormCustomers.dvCust.CurrentRow.Cells(0).Value
                     txtName.Text = FormCustomers.dvCust.CurrentRow.Cells(1).Value
                     txtPhone.Text = FormCustomers.dvCust.CurrentRow.Cells(3).Value
@@ -57,14 +56,13 @@
 
             Case 2
                 If formType = 0 Then
-                    'check if adding new customer, update with new id
+                    'check if adding new employee, update with new id
                     newID = CType(FormEmployees.EmployeeTableAdapter.GetEmpIDs.Last.emp_id, Integer) + 1
                     Console.WriteLine("New employee ID: " & newID)
                     txtID.Text = CStr(newID)
 
                 ElseIf formType = 1 Then
-                    'if editing customer, load values to textboxes
-
+                    'if editing employee, load values to textboxes
                     txtID.Text = FormEmployees.dvEmp.CurrentRow.Cells(0).Value
                     txtName.Text = FormEmployees.dvEmp.CurrentRow.Cells(1).Value
                     comboType.Text = FormEmployees.dvEmp.CurrentRow.Cells(2).Value
@@ -75,9 +73,34 @@
                 End If
 
             Case 3
+                If formType = 0 Then
+                    'check if adding new invoice, update with new id
+                    newID = CType(FormInvoice.InvoiceTableAdapter.GetInvID.Last.invoice_id, Integer) + 1
+                    Console.WriteLine("New invoice ID: " & newID)
+                    txtID.Text = CStr(newID)
 
+                ElseIf formType = 1 Then
+                    'if editing invoice, load values to textboxes
+                    txtID.Text = FormInvoice.dvInv.CurrentRow.Cells(0).Value
+                    dtDate.Text = FormInvoice.dvInv.CurrentRow.Cells(1).Value
+                    txtAmount.Text = FormInvoice.dvInv.CurrentRow.Cells(2).Value
+                    dtDueDate.Text = FormInvoice.dvInv.CurrentRow.Cells(3).Value
+                End If
 
             Case 4
+                If formType = 0 Then
+                    'check if adding new job, update with new id
+                    newID = CType(FormJobs.JobTableAdapter.GetJobID.Last.job_id, Integer) + 1
+                    Console.WriteLine("New job ID: " & newID)
+                    txtID.Text = CStr(newID)
+
+                ElseIf formType = 1 Then
+                    'if editing job, load values to textboxes
+                    txtID.Text = FormJobs.dvJob.CurrentRow.Cells(0).Value
+                    dtDate.Text = FormJobs.dvJob.CurrentRow.Cells(1).Value
+                    txtAddress.Text = FormJobs.dvJob.CurrentRow.Cells(2).Value
+                    txtAmount.Text = FormJobs.dvJob.CurrentRow.Cells(3).Value
+                End If
         End Select
 
 

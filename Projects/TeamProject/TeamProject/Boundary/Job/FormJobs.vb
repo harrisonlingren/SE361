@@ -27,6 +27,16 @@
     End Sub
 
     Private Sub btnDelJob_Click(sender As Object, e As EventArgs) Handles btnDelJob.Click
+        Dim jobID As String = CType(dvJob.CurrentRow.Cells(0).Value, String)
+        Console.WriteLine(jobID & " to be deleted.")
 
+        Dim resp = MessageBox.Show("Are you sure you want to delete job'" & jobID & "'?", "Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If resp = Windows.Forms.DialogResult.Yes Then
+            Dim data As DataGridViewCellCollection = dvJob.Rows(selectedIndex).Cells
+            Dim jm As New cJobManager
+            jm.delete(data)
+        End If
+
+        reloadData()
     End Sub
 End Class

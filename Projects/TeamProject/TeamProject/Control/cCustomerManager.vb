@@ -26,4 +26,8 @@
     Public Sub New()
     End Sub
 
+    Sub delete(data As DataGridViewCellCollection)
+        FormCustomers.CustomerTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value, data(3).Value, data(4).Value)
+    End Sub
+
 End Class

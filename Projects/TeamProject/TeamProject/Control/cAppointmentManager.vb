@@ -25,4 +25,8 @@
     Public Sub New()
     End Sub
 
+    Sub delete(data As DataGridViewCellCollection)
+        FormAppts.AppointmentTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value)
+    End Sub
+
 End Class

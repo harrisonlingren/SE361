@@ -60,7 +60,7 @@ Partial Class FormJobs
         '
         'btnEditJob
         '
-        Me.btnEditJob.Enabled = False
+        Me.btnEditJob.Enabled = True
         Me.btnEditJob.Location = New System.Drawing.Point(128, 289)
         Me.btnEditJob.Name = "btnEditJob"
         Me.btnEditJob.Size = New System.Drawing.Size(110, 23)

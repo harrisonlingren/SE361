@@ -27,9 +27,11 @@ Public Class FormCustomers
         Dim resp = MessageBox.Show("Are you sure you want to delete '" & custName & "'?", "Confirm deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If resp = DialogResult.Yes Then
+            Dim cm As New cCustomerManager
             Dim data As DataGridViewCellCollection = dvCust.Rows(selectedIndex).Cells
-            CustomerTableAdapter.Delete(data(0).Value, data(1).Value, data(2).Value, data(3).Value, data(4).Value)
+            cm.delete(data)
         End If
+
         Me.reloadData()
     End Sub
 
