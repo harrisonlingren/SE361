@@ -35,6 +35,7 @@ Partial Class FormInvoice
         Me.InvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TeamProjectDataSet = New TeamProject.TeamProjectDataSet()
         Me.InvoiceTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.InvoiceTableAdapter()
+        Me.btnPrintInv = New System.Windows.Forms.Button()
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,27 +43,27 @@ Partial Class FormInvoice
         '
         'btnSaveInv
         '
-        Me.btnSaveInv.Location = New System.Drawing.Point(447, 289)
+        Me.btnSaveInv.Location = New System.Drawing.Point(466, 289)
         Me.btnSaveInv.Name = "btnSaveInv"
-        Me.btnSaveInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnSaveInv.Size = New System.Drawing.Size(91, 23)
         Me.btnSaveInv.TabIndex = 5
         Me.btnSaveInv.Text = "Save and Close"
         Me.btnSaveInv.UseVisualStyleBackColor = True
         '
         'btnDelInv
         '
-        Me.btnDelInv.Location = New System.Drawing.Point(244, 289)
+        Me.btnDelInv.Location = New System.Drawing.Point(220, 289)
         Me.btnDelInv.Name = "btnDelInv"
-        Me.btnDelInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnDelInv.Size = New System.Drawing.Size(98, 23)
         Me.btnDelInv.TabIndex = 6
         Me.btnDelInv.Text = "Delete"
         Me.btnDelInv.UseVisualStyleBackColor = True
         '
         'btnEditInv
         '
-        Me.btnEditInv.Location = New System.Drawing.Point(128, 289)
+        Me.btnEditInv.Location = New System.Drawing.Point(116, 289)
         Me.btnEditInv.Name = "btnEditInv"
-        Me.btnEditInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnEditInv.Size = New System.Drawing.Size(98, 23)
         Me.btnEditInv.TabIndex = 4
         Me.btnEditInv.Text = "Edit"
         Me.btnEditInv.UseVisualStyleBackColor = True
@@ -71,7 +72,7 @@ Partial Class FormInvoice
         '
         Me.btnAddInv.Location = New System.Drawing.Point(12, 289)
         Me.btnAddInv.Name = "btnAddInv"
-        Me.btnAddInv.Size = New System.Drawing.Size(110, 23)
+        Me.btnAddInv.Size = New System.Drawing.Size(98, 23)
         Me.btnAddInv.TabIndex = 3
         Me.btnAddInv.Text = "Add"
         Me.btnAddInv.UseVisualStyleBackColor = True
@@ -133,6 +134,15 @@ Partial Class FormInvoice
         '
         Me.InvoiceTableAdapter.ClearBeforeFill = True
         '
+        'btnPrintInv
+        '
+        Me.btnPrintInv.Location = New System.Drawing.Point(348, 289)
+        Me.btnPrintInv.Name = "btnPrintInv"
+        Me.btnPrintInv.Size = New System.Drawing.Size(98, 23)
+        Me.btnPrintInv.TabIndex = 6
+        Me.btnPrintInv.Text = "Print..."
+        Me.btnPrintInv.UseVisualStyleBackColor = True
+        '
         'FormInvoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -140,6 +150,7 @@ Partial Class FormInvoice
         Me.ClientSize = New System.Drawing.Size(569, 324)
         Me.Controls.Add(Me.dvInv)
         Me.Controls.Add(Me.btnSaveInv)
+        Me.Controls.Add(Me.btnPrintInv)
         Me.Controls.Add(Me.btnDelInv)
         Me.Controls.Add(Me.btnEditInv)
         Me.Controls.Add(Me.btnAddInv)
@@ -164,4 +175,5 @@ Partial Class FormInvoice
     Friend WithEvents InvoicedateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents InvoicecostDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents InvoiceduedateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnPrintInv As System.Windows.Forms.Button
 End Class

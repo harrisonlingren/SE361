@@ -38,4 +38,10 @@
 
         reloadData()
     End Sub
+
+    Private Sub btnPrintInv_Click(sender As Object, e As EventArgs) Handles btnPrintInv.Click
+        Dim printer As New cPrintData
+        printer.data = dvInv.Rows(selectedIndex).Cells
+        printer.Print()
+    End Sub
 End Class

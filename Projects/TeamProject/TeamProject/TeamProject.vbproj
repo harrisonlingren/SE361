@@ -89,6 +89,9 @@
     <Compile Include="Control\cEmployeeManager.vb" />
     <Compile Include="Control\cInvoiceManager.vb" />
     <Compile Include="Control\cJobManager.vb" />
+    <Compile Include="Control\cPrintData.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Data\TeamProjectDataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
