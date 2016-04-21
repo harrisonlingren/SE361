@@ -44,6 +44,7 @@ Partial Class FormObjectEditor
         Me.comboCustomers = New System.Windows.Forms.ComboBox()
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.comboType = New System.Windows.Forms.ComboBox()
+        Me.dtDueDate = New System.Windows.Forms.DateTimePicker()
         Me.dtDate = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -52,13 +53,12 @@ Partial Class FormObjectEditor
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtPayRate = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.CustomerTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.CustomerTableAdapter()
         Me.JobTableAdapter = New TeamProject.TeamProjectDataSetTableAdapters.JobTableAdapter()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtDueDate = New System.Windows.Forms.DateTimePicker()
         Me.gbProperties.SuspendLayout()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,6 +261,13 @@ Partial Class FormObjectEditor
         Me.comboType.Size = New System.Drawing.Size(146, 21)
         Me.comboType.TabIndex = 23
         '
+        'dtDueDate
+        '
+        Me.dtDueDate.Location = New System.Drawing.Point(311, 152)
+        Me.dtDueDate.Name = "dtDueDate"
+        Me.dtDueDate.Size = New System.Drawing.Size(146, 20)
+        Me.dtDueDate.TabIndex = 22
+        '
         'dtDate
         '
         Me.dtDate.Location = New System.Drawing.Point(69, 126)
@@ -327,6 +334,15 @@ Partial Class FormObjectEditor
         Me.Label13.TabIndex = 20
         Me.Label13.Text = "Job:"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(248, 155)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 13)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Due Date:"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -360,22 +376,6 @@ Partial Class FormObjectEditor
         '
         Me.JobTableAdapter.ClearBeforeFill = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(248, 155)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 13)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Due Date:"
-        '
-        'dtDueDate
-        '
-        Me.dtDueDate.Location = New System.Drawing.Point(311, 152)
-        Me.dtDueDate.Name = "dtDueDate"
-        Me.dtDueDate.Size = New System.Drawing.Size(146, 20)
-        Me.dtDueDate.TabIndex = 22
-        '
         'FormObjectEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -389,7 +389,7 @@ Partial Class FormObjectEditor
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblIdNum)
         Me.Name = "FormObjectEditor"
-        Me.Text = "FormObjectEditor"
+        Me.Text = "Editor Window"
         Me.gbProperties.ResumeLayout(False)
         Me.gbProperties.PerformLayout()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

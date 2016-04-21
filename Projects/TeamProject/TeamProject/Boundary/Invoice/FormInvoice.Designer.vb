@@ -81,6 +81,7 @@ Partial Class FormInvoice
         Me.dvInv.AllowUserToAddRows = False
         Me.dvInv.AllowUserToDeleteRows = False
         Me.dvInv.AutoGenerateColumns = False
+        Me.dvInv.BackgroundColor = System.Drawing.Color.White
         Me.dvInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvInv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InvoiceidDataGridViewTextBoxColumn, Me.InvoicedateDataGridViewTextBoxColumn, Me.InvoicecostDataGridViewTextBoxColumn, Me.InvoiceduedateDataGridViewTextBoxColumn})
         Me.dvInv.DataSource = Me.InvoiceBindingSource
@@ -93,28 +94,28 @@ Partial Class FormInvoice
         'InvoiceidDataGridViewTextBoxColumn
         '
         Me.InvoiceidDataGridViewTextBoxColumn.DataPropertyName = "invoice_id"
-        Me.InvoiceidDataGridViewTextBoxColumn.HeaderText = "invoice_id"
+        Me.InvoiceidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.InvoiceidDataGridViewTextBoxColumn.Name = "InvoiceidDataGridViewTextBoxColumn"
         Me.InvoiceidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'InvoicedateDataGridViewTextBoxColumn
         '
         Me.InvoicedateDataGridViewTextBoxColumn.DataPropertyName = "invoice_date"
-        Me.InvoicedateDataGridViewTextBoxColumn.HeaderText = "invoice_date"
+        Me.InvoicedateDataGridViewTextBoxColumn.HeaderText = "Date"
         Me.InvoicedateDataGridViewTextBoxColumn.Name = "InvoicedateDataGridViewTextBoxColumn"
         Me.InvoicedateDataGridViewTextBoxColumn.ReadOnly = True
         '
         'InvoicecostDataGridViewTextBoxColumn
         '
         Me.InvoicecostDataGridViewTextBoxColumn.DataPropertyName = "invoice_cost"
-        Me.InvoicecostDataGridViewTextBoxColumn.HeaderText = "invoice_cost"
+        Me.InvoicecostDataGridViewTextBoxColumn.HeaderText = "Cost"
         Me.InvoicecostDataGridViewTextBoxColumn.Name = "InvoicecostDataGridViewTextBoxColumn"
         Me.InvoicecostDataGridViewTextBoxColumn.ReadOnly = True
         '
         'InvoiceduedateDataGridViewTextBoxColumn
         '
         Me.InvoiceduedateDataGridViewTextBoxColumn.DataPropertyName = "invoice_due_date"
-        Me.InvoiceduedateDataGridViewTextBoxColumn.HeaderText = "invoice_due_date"
+        Me.InvoiceduedateDataGridViewTextBoxColumn.HeaderText = "Due Date"
         Me.InvoiceduedateDataGridViewTextBoxColumn.Name = "InvoiceduedateDataGridViewTextBoxColumn"
         Me.InvoiceduedateDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -143,7 +144,7 @@ Partial Class FormInvoice
         Me.Controls.Add(Me.btnEditInv)
         Me.Controls.Add(Me.btnAddInv)
         Me.Name = "FormInvoice"
-        Me.Text = "FormInvoice"
+        Me.Text = "Manage Payments"
         CType(Me.dvInv, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -159,8 +160,8 @@ Partial Class FormInvoice
     Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
     Friend WithEvents InvoiceBindingSource As BindingSource
     Friend WithEvents InvoiceTableAdapter As TeamProjectDataSetTableAdapters.InvoiceTableAdapter
-    Friend WithEvents InvoiceidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents InvoicedateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents InvoicecostDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents InvoiceduedateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents InvoicedateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents InvoicecostDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceduedateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

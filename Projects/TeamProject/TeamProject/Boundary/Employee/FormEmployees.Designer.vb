@@ -85,6 +85,7 @@ Partial Class FormEmployees
         Me.dvEmp.AllowUserToAddRows = False
         Me.dvEmp.AllowUserToDeleteRows = False
         Me.dvEmp.AutoGenerateColumns = False
+        Me.dvEmp.BackgroundColor = System.Drawing.Color.White
         Me.dvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvEmp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EmpidDataGridViewTextBoxColumn, Me.EmpnameDataGridViewTextBoxColumn, Me.EmptypeDataGridViewTextBoxColumn, Me.EmpaddrDataGridViewTextBoxColumn, Me.EmpphoneDataGridViewTextBoxColumn, Me.EmphoursDataGridViewTextBoxColumn, Me.EmppayrateDataGridViewTextBoxColumn})
         Me.dvEmp.DataSource = Me.EmployeeBindingSource
@@ -97,49 +98,49 @@ Partial Class FormEmployees
         'EmpidDataGridViewTextBoxColumn
         '
         Me.EmpidDataGridViewTextBoxColumn.DataPropertyName = "emp_id"
-        Me.EmpidDataGridViewTextBoxColumn.HeaderText = "emp_id"
+        Me.EmpidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.EmpidDataGridViewTextBoxColumn.Name = "EmpidDataGridViewTextBoxColumn"
         Me.EmpidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmpnameDataGridViewTextBoxColumn
         '
         Me.EmpnameDataGridViewTextBoxColumn.DataPropertyName = "emp_name"
-        Me.EmpnameDataGridViewTextBoxColumn.HeaderText = "emp_name"
+        Me.EmpnameDataGridViewTextBoxColumn.HeaderText = "Name"
         Me.EmpnameDataGridViewTextBoxColumn.Name = "EmpnameDataGridViewTextBoxColumn"
         Me.EmpnameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmptypeDataGridViewTextBoxColumn
         '
         Me.EmptypeDataGridViewTextBoxColumn.DataPropertyName = "emp_type"
-        Me.EmptypeDataGridViewTextBoxColumn.HeaderText = "emp_type"
+        Me.EmptypeDataGridViewTextBoxColumn.HeaderText = "Type"
         Me.EmptypeDataGridViewTextBoxColumn.Name = "EmptypeDataGridViewTextBoxColumn"
         Me.EmptypeDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmpaddrDataGridViewTextBoxColumn
         '
         Me.EmpaddrDataGridViewTextBoxColumn.DataPropertyName = "emp_addr"
-        Me.EmpaddrDataGridViewTextBoxColumn.HeaderText = "emp_addr"
+        Me.EmpaddrDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.EmpaddrDataGridViewTextBoxColumn.Name = "EmpaddrDataGridViewTextBoxColumn"
         Me.EmpaddrDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmpphoneDataGridViewTextBoxColumn
         '
         Me.EmpphoneDataGridViewTextBoxColumn.DataPropertyName = "emp_phone"
-        Me.EmpphoneDataGridViewTextBoxColumn.HeaderText = "emp_phone"
+        Me.EmpphoneDataGridViewTextBoxColumn.HeaderText = "Phone"
         Me.EmpphoneDataGridViewTextBoxColumn.Name = "EmpphoneDataGridViewTextBoxColumn"
         Me.EmpphoneDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmphoursDataGridViewTextBoxColumn
         '
         Me.EmphoursDataGridViewTextBoxColumn.DataPropertyName = "emp_hours"
-        Me.EmphoursDataGridViewTextBoxColumn.HeaderText = "emp_hours"
+        Me.EmphoursDataGridViewTextBoxColumn.HeaderText = "Hours"
         Me.EmphoursDataGridViewTextBoxColumn.Name = "EmphoursDataGridViewTextBoxColumn"
         Me.EmphoursDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmppayrateDataGridViewTextBoxColumn
         '
         Me.EmppayrateDataGridViewTextBoxColumn.DataPropertyName = "emp_pay_rate"
-        Me.EmppayrateDataGridViewTextBoxColumn.HeaderText = "emp_pay_rate"
+        Me.EmppayrateDataGridViewTextBoxColumn.HeaderText = "Pay Rate"
         Me.EmppayrateDataGridViewTextBoxColumn.Name = "EmppayrateDataGridViewTextBoxColumn"
         Me.EmppayrateDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -168,7 +169,7 @@ Partial Class FormEmployees
         Me.Controls.Add(Me.btnEditEmp)
         Me.Controls.Add(Me.btnAddEmp)
         Me.Name = "FormEmployees"
-        Me.Text = "FormEmployees"
+        Me.Text = "Manage Employees"
         CType(Me.dvEmp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -184,11 +185,11 @@ Partial Class FormEmployees
     Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As TeamProjectDataSetTableAdapters.EmployeeTableAdapter
-    Friend WithEvents EmpidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmpnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmptypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmpaddrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmpphoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmphoursDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmppayrateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmpidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmpnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmptypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmpaddrDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmpphoneDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmphoursDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmppayrateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

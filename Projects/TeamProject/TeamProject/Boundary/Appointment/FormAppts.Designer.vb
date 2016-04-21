@@ -44,6 +44,7 @@ Partial Class FormAppts
         Me.dvAppts.AllowUserToAddRows = False
         Me.dvAppts.AllowUserToDeleteRows = False
         Me.dvAppts.AutoGenerateColumns = False
+        Me.dvAppts.BackgroundColor = System.Drawing.Color.White
         Me.dvAppts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvAppts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ApptidDataGridViewTextBoxColumn, Me.ApptdateDataGridViewTextBoxColumn, Me.ApptaddressDataGridViewTextBoxColumn})
         Me.dvAppts.DataSource = Me.AppointmentBindingSource
@@ -56,21 +57,21 @@ Partial Class FormAppts
         'ApptidDataGridViewTextBoxColumn
         '
         Me.ApptidDataGridViewTextBoxColumn.DataPropertyName = "appt_id"
-        Me.ApptidDataGridViewTextBoxColumn.HeaderText = "appt_id"
+        Me.ApptidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.ApptidDataGridViewTextBoxColumn.Name = "ApptidDataGridViewTextBoxColumn"
         Me.ApptidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ApptdateDataGridViewTextBoxColumn
         '
         Me.ApptdateDataGridViewTextBoxColumn.DataPropertyName = "appt_date"
-        Me.ApptdateDataGridViewTextBoxColumn.HeaderText = "appt_date"
+        Me.ApptdateDataGridViewTextBoxColumn.HeaderText = "Date"
         Me.ApptdateDataGridViewTextBoxColumn.Name = "ApptdateDataGridViewTextBoxColumn"
         Me.ApptdateDataGridViewTextBoxColumn.ReadOnly = True
         '
         'ApptaddressDataGridViewTextBoxColumn
         '
         Me.ApptaddressDataGridViewTextBoxColumn.DataPropertyName = "appt_address"
-        Me.ApptaddressDataGridViewTextBoxColumn.HeaderText = "appt_address"
+        Me.ApptaddressDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.ApptaddressDataGridViewTextBoxColumn.Name = "ApptaddressDataGridViewTextBoxColumn"
         Me.ApptaddressDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -136,7 +137,7 @@ Partial Class FormAppts
         Me.Controls.Add(Me.btnAddAppt)
         Me.Controls.Add(Me.dvAppts)
         Me.Name = "FormAppts"
-        Me.Text = "FormAppts"
+        Me.Text = "Appointment Calendar"
         CType(Me.dvAppts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AppointmentBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -151,7 +152,7 @@ Partial Class FormAppts
     Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
     Friend WithEvents AppointmentBindingSource As BindingSource
     Friend WithEvents AppointmentTableAdapter As TeamProjectDataSetTableAdapters.AppointmentTableAdapter
-    Friend WithEvents ApptidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ApptdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ApptaddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ApptidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ApptdateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ApptaddressDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

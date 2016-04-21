@@ -65,4 +65,68 @@ Public Class FormMain
         End Try
     End Function
 
+    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        reloadForm()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        reloadForm()
+    End Sub
+
+    Private Sub reloadForm()
+        Dim monthN, dayN, hourN, pm As String
+        Timer1.Start()
+        Select Case Date.Now.Month
+            Case 0
+                monthN = "January"
+            Case 1
+                monthN = "February"
+            Case 2
+                monthN = "March"
+            Case 3
+                monthN = "April"
+            Case 4
+                monthN = "May"
+            Case 5
+                monthN = "June"
+            Case 6
+                monthN = "July"
+            Case 7
+                monthN = "August"
+            Case 8
+                monthN = "September"
+            Case 9
+                monthN = "October"
+            Case 10
+                monthN = "November"
+            Case 11
+                monthN = "December"
+        End Select
+
+        Select Case Date.Now.DayOfWeek
+            Case 0
+                dayN = "Sunday"
+            Case 1
+                dayN = "Monday"
+            Case 2
+                dayN = "Tuesday"
+            Case 3
+                dayN = "Wednesday"
+            Case 4
+                dayN = "Thursday"
+            Case 5
+                dayN = "Friday"
+            Case 6
+                dayN = "Saturday"
+        End Select
+        If Date.Now.Hour > 12 Then
+            hourN = CStr(Date.Now.Hour - 12)
+            pm = "PM"
+        Else
+            pm = "AM"
+            hourN = CStr(Date.Now.Hour)
+        End If
+
+        lDate.Text = dayN & ", " & vbNewLine & monthN & " " & Date.Now.Day & ", " & Date.Now.Year & vbNewLine & hourN & ":" & Date.Now.Minute & " " & pm
+    End Sub
 End Class

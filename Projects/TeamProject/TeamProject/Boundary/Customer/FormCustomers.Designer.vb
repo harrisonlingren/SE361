@@ -83,6 +83,7 @@ Partial Class FormCustomers
         Me.dvCust.AllowUserToAddRows = False
         Me.dvCust.AllowUserToDeleteRows = False
         Me.dvCust.AutoGenerateColumns = False
+        Me.dvCust.BackgroundColor = System.Drawing.Color.White
         Me.dvCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvCust.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustidDataGridViewTextBoxColumn, Me.CustnameDataGridViewTextBoxColumn, Me.CustaddrDataGridViewTextBoxColumn, Me.CustphoneDataGridViewTextBoxColumn, Me.CustemailDataGridViewTextBoxColumn})
         Me.dvCust.DataSource = Me.CustomerBindingSource
@@ -95,35 +96,35 @@ Partial Class FormCustomers
         'CustidDataGridViewTextBoxColumn
         '
         Me.CustidDataGridViewTextBoxColumn.DataPropertyName = "cust_id"
-        Me.CustidDataGridViewTextBoxColumn.HeaderText = "cust_id"
+        Me.CustidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.CustidDataGridViewTextBoxColumn.Name = "CustidDataGridViewTextBoxColumn"
         Me.CustidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'CustnameDataGridViewTextBoxColumn
         '
         Me.CustnameDataGridViewTextBoxColumn.DataPropertyName = "cust_name"
-        Me.CustnameDataGridViewTextBoxColumn.HeaderText = "cust_name"
+        Me.CustnameDataGridViewTextBoxColumn.HeaderText = "Name"
         Me.CustnameDataGridViewTextBoxColumn.Name = "CustnameDataGridViewTextBoxColumn"
         Me.CustnameDataGridViewTextBoxColumn.ReadOnly = True
         '
         'CustaddrDataGridViewTextBoxColumn
         '
         Me.CustaddrDataGridViewTextBoxColumn.DataPropertyName = "cust_addr"
-        Me.CustaddrDataGridViewTextBoxColumn.HeaderText = "cust_addr"
+        Me.CustaddrDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.CustaddrDataGridViewTextBoxColumn.Name = "CustaddrDataGridViewTextBoxColumn"
         Me.CustaddrDataGridViewTextBoxColumn.ReadOnly = True
         '
         'CustphoneDataGridViewTextBoxColumn
         '
         Me.CustphoneDataGridViewTextBoxColumn.DataPropertyName = "cust_phone"
-        Me.CustphoneDataGridViewTextBoxColumn.HeaderText = "cust_phone"
+        Me.CustphoneDataGridViewTextBoxColumn.HeaderText = "Phone"
         Me.CustphoneDataGridViewTextBoxColumn.Name = "CustphoneDataGridViewTextBoxColumn"
         Me.CustphoneDataGridViewTextBoxColumn.ReadOnly = True
         '
         'CustemailDataGridViewTextBoxColumn
         '
         Me.CustemailDataGridViewTextBoxColumn.DataPropertyName = "cust_email"
-        Me.CustemailDataGridViewTextBoxColumn.HeaderText = "cust_email"
+        Me.CustemailDataGridViewTextBoxColumn.HeaderText = "Email"
         Me.CustemailDataGridViewTextBoxColumn.Name = "CustemailDataGridViewTextBoxColumn"
         Me.CustemailDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -152,7 +153,7 @@ Partial Class FormCustomers
         Me.Controls.Add(Me.btnEditCust)
         Me.Controls.Add(Me.btnAddCust)
         Me.Name = "FormCustomers"
-        Me.Text = "FormCustomers"
+        Me.Text = "Manage Customers"
         CType(Me.dvCust, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -168,9 +169,9 @@ Partial Class FormCustomers
     Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
     Friend WithEvents CustomerBindingSource As BindingSource
     Friend WithEvents CustomerTableAdapter As TeamProjectDataSetTableAdapters.CustomerTableAdapter
-    Friend WithEvents CustidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustaddrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustphoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustemailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CustnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CustaddrDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CustphoneDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CustemailDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

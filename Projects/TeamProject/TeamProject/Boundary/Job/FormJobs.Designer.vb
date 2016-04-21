@@ -60,7 +60,6 @@ Partial Class FormJobs
         '
         'btnEditJob
         '
-        Me.btnEditJob.Enabled = True
         Me.btnEditJob.Location = New System.Drawing.Point(128, 289)
         Me.btnEditJob.Name = "btnEditJob"
         Me.btnEditJob.Size = New System.Drawing.Size(110, 23)
@@ -82,6 +81,7 @@ Partial Class FormJobs
         Me.dvJob.AllowUserToAddRows = False
         Me.dvJob.AllowUserToDeleteRows = False
         Me.dvJob.AutoGenerateColumns = False
+        Me.dvJob.BackgroundColor = System.Drawing.Color.White
         Me.dvJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvJob.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.JobidDataGridViewTextBoxColumn, Me.JobdateDataGridViewTextBoxColumn, Me.JobaddressDataGridViewTextBoxColumn, Me.JobcostDataGridViewTextBoxColumn})
         Me.dvJob.DataSource = Me.JobBindingSource
@@ -94,28 +94,28 @@ Partial Class FormJobs
         'JobidDataGridViewTextBoxColumn
         '
         Me.JobidDataGridViewTextBoxColumn.DataPropertyName = "job_id"
-        Me.JobidDataGridViewTextBoxColumn.HeaderText = "job_id"
+        Me.JobidDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.JobidDataGridViewTextBoxColumn.Name = "JobidDataGridViewTextBoxColumn"
         Me.JobidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'JobdateDataGridViewTextBoxColumn
         '
         Me.JobdateDataGridViewTextBoxColumn.DataPropertyName = "job_date"
-        Me.JobdateDataGridViewTextBoxColumn.HeaderText = "job_date"
+        Me.JobdateDataGridViewTextBoxColumn.HeaderText = "Date"
         Me.JobdateDataGridViewTextBoxColumn.Name = "JobdateDataGridViewTextBoxColumn"
         Me.JobdateDataGridViewTextBoxColumn.ReadOnly = True
         '
         'JobaddressDataGridViewTextBoxColumn
         '
         Me.JobaddressDataGridViewTextBoxColumn.DataPropertyName = "job_address"
-        Me.JobaddressDataGridViewTextBoxColumn.HeaderText = "job_address"
+        Me.JobaddressDataGridViewTextBoxColumn.HeaderText = "Address"
         Me.JobaddressDataGridViewTextBoxColumn.Name = "JobaddressDataGridViewTextBoxColumn"
         Me.JobaddressDataGridViewTextBoxColumn.ReadOnly = True
         '
         'JobcostDataGridViewTextBoxColumn
         '
         Me.JobcostDataGridViewTextBoxColumn.DataPropertyName = "job_cost"
-        Me.JobcostDataGridViewTextBoxColumn.HeaderText = "job_cost"
+        Me.JobcostDataGridViewTextBoxColumn.HeaderText = "Cost"
         Me.JobcostDataGridViewTextBoxColumn.Name = "JobcostDataGridViewTextBoxColumn"
         Me.JobcostDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -144,7 +144,7 @@ Partial Class FormJobs
         Me.Controls.Add(Me.btnEditJob)
         Me.Controls.Add(Me.btnAddJob)
         Me.Name = "FormJobs"
-        Me.Text = "FormJobs"
+        Me.Text = "Manage Jobs"
         CType(Me.dvJob, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.JobBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TeamProjectDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -160,8 +160,8 @@ Partial Class FormJobs
     Friend WithEvents TeamProjectDataSet As TeamProjectDataSet
     Friend WithEvents JobBindingSource As BindingSource
     Friend WithEvents JobTableAdapter As TeamProjectDataSetTableAdapters.JobTableAdapter
-    Friend WithEvents JobidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JobdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JobaddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JobcostDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JobidDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents JobdateDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents JobaddressDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents JobcostDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
